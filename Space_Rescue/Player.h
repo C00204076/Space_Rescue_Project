@@ -37,6 +37,7 @@ private:
 	void loadTexture();
 
 	void move();
+	void cameraFollow();
 
 
 	sf::Sprite m_sprite;
