@@ -1,3 +1,12 @@
+//
+// C00
+// Paul Nolan
+// C00204076
+// Brandon Seah-Dempsey
+// Started at 11:11 7 January 2019
+// Finished at
+// Time taken:
+// Known bugs:
 
 
 #include "Game.h"
@@ -26,6 +35,8 @@ Game::~Game()
 void Game::initialise()
 {
 	m_tileMap = new TileMap((float)50.0f);
+
+	m_player = new Player();
 }
 
 /// <summary>
@@ -139,6 +150,8 @@ void Game::update(sf::Time deltaTime)
 	}
 
 	m_tileMap->update(deltaTime, m_window);
+
+	m_player->update(deltaTime);
 }
 
 /// <summary>
@@ -149,6 +162,8 @@ void Game::render()
 	m_window.clear(sf::Color::Black); //Set background to black
 
 	m_tileMap->render(m_window);
+
+	m_player->render(m_window);
 
 	m_window.display();
 }

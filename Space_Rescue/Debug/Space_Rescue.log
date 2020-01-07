@@ -1,2 +1,12 @@
-﻿  main.cpp
+﻿  Player.cpp
+C:\Users\gameuser\Desktop\Space_Rescue\Space_Rescue\Player.cpp(86,84): warning C4244:  '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\gameuser\Desktop\Space_Rescue\Space_Rescue\Player.cpp(86,84): warning C4244:         with
+C:\Users\gameuser\Desktop\Space_Rescue\Space_Rescue\Player.cpp(86,84): warning C4244:         [
+C:\Users\gameuser\Desktop\Space_Rescue\Space_Rescue\Player.cpp(86,84): warning C4244:             T=float
+C:\Users\gameuser\Desktop\Space_Rescue\Space_Rescue\Player.cpp(86,84): warning C4244:         ]
+C:\Users\gameuser\Desktop\Space_Rescue\Space_Rescue\Player.cpp(87,85): warning C4244:  '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\gameuser\Desktop\Space_Rescue\Space_Rescue\Player.cpp(87,85): warning C4244:         with
+C:\Users\gameuser\Desktop\Space_Rescue\Space_Rescue\Player.cpp(87,85): warning C4244:         [
+C:\Users\gameuser\Desktop\Space_Rescue\Space_Rescue\Player.cpp(87,85): warning C4244:             T=float
+C:\Users\gameuser\Desktop\Space_Rescue\Space_Rescue\Player.cpp(87,85): warning C4244:         ]
   Space_Rescue.vcxproj -> C:\Users\gameuser\Desktop\Space_Rescue\Debug\Space_Rescue.exe

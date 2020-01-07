@@ -14,6 +14,7 @@
 #include <SFML/Graphics.hpp>
 
 class TileMap;
+class Player;
 
 //
 class Game
@@ -36,8 +37,11 @@ private:
 	bool is_running;
 
 	TileMap* m_tileMap;
+
+	Player* m_player;
 };
 
 #include "TileMap.h"
+#include "Player.h"
 
 #endif // !GAME_H
