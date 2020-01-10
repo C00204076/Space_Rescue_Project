@@ -23,8 +23,6 @@ public:
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
 	void render(sf::RenderWindow& window);
 
-	void tileSetting(sf::RenderWindow& window);
-
 	void setValues();
 
 private:
