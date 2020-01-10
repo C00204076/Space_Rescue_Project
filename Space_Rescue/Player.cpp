@@ -19,7 +19,7 @@ Player::Player()
 //
 Player::~Player()
 {
-
+	delete this;
 }
 
 //
@@ -90,15 +90,13 @@ void Player::move()
 }
 
 //
-void Player::update(sf::Time deltaTime)
+void Player::update(sf::Time deltaTime, sf::View & v)
 {
-
-
 	//
 	move();
+	//
+	v.setCenter(m_position.x, m_position.y);
 }
-
-
 
 //
 void Player::render(sf::RenderWindow& window)

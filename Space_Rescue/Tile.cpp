@@ -36,13 +36,13 @@ void Tile::initialise()
 {
 	m_value = 1;
 
-	m_square.setSize(sf::Vector2f(28, 28));
+	m_square.setSize(sf::Vector2f(75, 75));
 	setColour();
 	m_square.setOutlineColor(sf::Color::Black);
-	m_square.setPosition(m_x * 29, m_y * 29);
+	m_square.setPosition(m_x * 75, m_y * 75);
 
-	m_position.x = m_x * 29;
-	m_position.y = m_y * 29;
+	m_position.x = m_x * 75;
+	m_position.y = m_y * 75;
 }
 
 

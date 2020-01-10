@@ -21,7 +21,7 @@ public:
 	Player();
 	~Player();
 
-	void update(sf::Time deltaTime);
+	void update(sf::Time deltaTime, sf::View& v);
 	void render(sf::RenderWindow& window);
 
 	sf::Vector2f getPosition();
@@ -37,12 +37,13 @@ private:
 	void loadTexture();
 
 	void move();
-	void cameraFollow();
+	
 
 
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;
 	sf::Vector2f m_position, m_velocity;
+
 
 	float m_maxSpeed;
 };

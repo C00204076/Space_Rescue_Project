@@ -33,6 +33,8 @@ private:
 	void update(sf::Time deltaTime);
 	void render();
 
+	sf::View m_playerView, m_miniMap;
+
 	sf::RenderWindow m_window;
 	bool is_running;
 

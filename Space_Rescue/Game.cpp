@@ -15,7 +15,7 @@
 /// 
 /// </summary>
 Game::Game() :
-	m_window{ sf::VideoMode{ 1450, 1450, 32}, "Space Rescue" },
+	m_window{ sf::VideoMode{ 1500, 900, 32}, "Space Rescue" },
 	is_running{ true }
 {
 	initialise();
@@ -34,6 +34,10 @@ Game::~Game()
 /// </summary>
 void Game::initialise()
 {
+	m_playerView.setCenter(m_window.getSize().x / 2, m_window.getSize().y);
+	m_playerView.setSize(1500, 900);
+	m_playerView.zoom(1.0f);
+
 	m_tileMap = new TileMap((float)50.0f);
 
 	m_player = new Player();
@@ -151,7 +155,8 @@ void Game::update(sf::Time deltaTime)
 
 	m_tileMap->update(deltaTime, m_window);
 
-	m_player->update(deltaTime);
+	m_player->update(deltaTime, m_playerView);
+
 }
 
 /// <summary>
@@ -165,5 +170,6 @@ void Game::render()
 
 	m_player->render(m_window);
 
+	m_window.setView(m_playerView);
 	m_window.display();
 }
