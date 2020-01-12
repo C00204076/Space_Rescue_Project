@@ -32,6 +32,12 @@ public:
 
 	sf::Vector2f getVelocity();
 
+	bool getImmune();
+	void setImmune(bool immune);
+
+	bool getSpeed();
+	void setSpeed(bool speed);
+
 
 private:
 	void initalise();
@@ -39,6 +45,7 @@ private:
 
 	void move();
 	
+	void powerup();
 
 
 	sf::Sprite m_sprite;
@@ -46,7 +53,9 @@ private:
 	sf::Vector2f m_position, m_velocity;
 
 
-	float m_maxSpeed;
+	float m_maxSpeed, m_addedSpeed;
+
+	bool m_immune, m_speed;
 };
 
 #endif // !PLAYER_H

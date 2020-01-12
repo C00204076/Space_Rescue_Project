@@ -27,12 +27,12 @@ public:
 	MiniMap(Player* player);
 	~MiniMap();
 
-	void initialise();
-
 	void update(sf::Time deltaTime, sf::RenderWindow& window, sf::View view);
 	void render(sf::RenderWindow& window, sf::View view);
 
 private:
+	void initialise();
+
 	TileMap* m_tileMap;
 	Player* m_player;
 };

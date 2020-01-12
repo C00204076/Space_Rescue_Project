@@ -29,12 +29,17 @@ void Player::initalise()
 
 	//
 	m_maxSpeed = 16;
+	m_addedSpeed = 0.0f;
 	m_position = sf::Vector2f(500, 400);
 	//
 	m_sprite.setTexture(m_texture);
 	m_sprite.setOrigin(25, 25);
 	m_sprite.setPosition(m_position);
 	m_sprite.setRotation(0);
+
+	//
+	m_immune = false;
+	m_speed = false;
 }
 
 //
@@ -65,8 +70,8 @@ void Player::move()
 		//
 		if (m_velocity.y < m_maxSpeed)
 		{
-			m_velocity.x += 0.1f;
-			m_velocity.y += 0.1f;
+			m_velocity.x += 0.1f + m_addedSpeed;
+			m_velocity.y += 0.1f + m_addedSpeed;
 		}
 	}
 	//
@@ -75,8 +80,8 @@ void Player::move()
 		//
 		if (m_velocity.y > 0.0f)
 		{
-			m_velocity.x -= 0.1f;
-			m_velocity.y -= 0.1f;
+			m_velocity.x -= 0.1f + m_addedSpeed;
+			m_velocity.y -= 0.1f + m_addedSpeed;
 		}
 	}
 
@@ -90,10 +95,37 @@ void Player::move()
 }
 
 //
+void Player::powerup()
+{
+	//
+	if (m_speed == true)
+	{
+		m_addedSpeed = 0.3f;
+	}
+	//
+	else if (m_speed == false)
+	{
+		m_addedSpeed = 0.0f;
+	}
+
+	//
+	if (m_immune == true)
+	{
+
+	}
+	else if (m_immune == false)
+	{
+
+	}
+}
+
+//
 void Player::update(sf::Time deltaTime, sf::View &v)
 {
 	//
 	move();
+	//
+	powerup();
 	//
 	v.setCenter(m_position.x, m_position.y);
 }
@@ -135,4 +167,26 @@ sf::Sprite Player::getSprite()
 sf::Vector2f Player::getVelocity()
 {
 	return m_velocity;
+}
+
+//
+bool Player::getImmune()
+{
+	return m_immune;
+}
+//
+void Player::setImmune(bool immune)
+{
+	m_immune = immune;
+}
+
+//
+bool Player::getSpeed()
+{
+	return m_speed;
+}
+//
+void Player::setSpeed(bool speed)
+{
+	m_speed = speed;
 }

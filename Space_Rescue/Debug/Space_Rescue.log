@@ -18,6 +18,9 @@ C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warn
 C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         [
 C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:             T=float
 C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         ]
+  main.cpp
+  MiniMap.cpp
+  Player.cpp
 C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
 C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         with
 C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         [
@@ -27,4 +30,32 @@ C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warn
 C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         [
 C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:             T=float
 C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         ]
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Player.cpp(91,84): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Player.cpp(91,84): warning C4244:         with
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Player.cpp(91,84): warning C4244:         [
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Player.cpp(91,84): warning C4244:             T=float
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Player.cpp(91,84): warning C4244:         ]
+  Power-up.cpp
+  Tile.cpp
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Player.cpp(92,85): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Player.cpp(92,85): warning C4244:         with
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Player.cpp(92,85): warning C4244:         [
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Player.cpp(92,85): warning C4244:             T=float
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Player.cpp(92,85): warning C4244:         ]
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(42,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(42,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(44,21): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(44,21): warning C4244:         with
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(44,21): warning C4244:         [
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(44,21): warning C4244:             T=float
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(44,21): warning C4244:         ]
+  TileMap.cpp
+  Generating Code...
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(45,21): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(45,21): warning C4244:         with
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(45,21): warning C4244:         [
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(45,21): warning C4244:             T=float
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(45,21): warning C4244:         ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(487,5): warning MSB8015: All source files are not up-to-date:  forcing a rebuild of all source files due to the contents of 'C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Debug\Space_Rescue.tlog\CL.command.1.tlog' being invalid.
+  LINK : C:\Users\Brandon\Desktop\Space_Rescue_Project\Debug\Space_Rescue.exe not found or not built by the last incremental link; performing full link
   Space_Rescue.vcxproj -> C:\Users\Brandon\Desktop\Space_Rescue_Project\Debug\Space_Rescue.exe

@@ -22,16 +22,25 @@ public:
 	PowerUp();
 	~PowerUp();
 
-	void initialise();
-
 	void update(sf::Time deltaTime);
-	void draw(sf::RenderWindow window);
+	void render(sf::RenderWindow& window);
+
+	void setType(int type);
+	int getType();
+
+	void setActive(bool active);
+	bool getActive();
 
 private:
+	void initialise();
+	void loadTexture();
+
 	sf::Sprite m_sprite;
 	sf::Texture m_textureOne, m_textureTwo;
 
 	int m_type;
+
+	bool m_active;
 };
 
 #endif // !POWERUP_H
