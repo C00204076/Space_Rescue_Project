@@ -90,7 +90,7 @@ void Player::move()
 }
 
 //
-void Player::update(sf::Time deltaTime, sf::View & v)
+void Player::update(sf::Time deltaTime, sf::View &v)
 {
 	//
 	move();
@@ -101,6 +101,15 @@ void Player::update(sf::Time deltaTime, sf::View & v)
 //
 void Player::render(sf::RenderWindow& window)
 {
+	window.draw(m_sprite);
+}
+
+//
+void Player::render(sf::RenderWindow& window, sf::Vector2f scale)
+{
+	//
+	m_sprite.setScale(scale);
+	//
 	window.draw(m_sprite);
 }
 

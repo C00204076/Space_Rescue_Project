@@ -12,6 +12,7 @@
 #define MINIMAP_H
 
 #include <iostream>
+#include <vector>
 
 #include "SFML/Graphics.hpp"
 
@@ -23,16 +24,17 @@
 class MiniMap
 {
 public:
-	MiniMap();
+	MiniMap(Player* player);
 	~MiniMap();
 
 	void initialise();
 
-	void update(sf::Time deltaTime);
-	void draw(sf::RenderWindow window);
+	void update(sf::Time deltaTime, sf::RenderWindow& window, sf::View view);
+	void render(sf::RenderWindow& window, sf::View view);
 
 private:
-
+	TileMap* m_tileMap;
+	Player* m_player;
 };
 
 #endif // !MINIMAP_H

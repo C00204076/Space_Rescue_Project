@@ -23,6 +23,7 @@ public:
 
 	void update(sf::Time deltaTime, sf::View& v);
 	void render(sf::RenderWindow& window);
+	void render(sf::RenderWindow& window, sf::Vector2f scale);
 
 	sf::Vector2f getPosition();
 	void setPosition(sf::Vector2f position);

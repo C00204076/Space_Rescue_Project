@@ -34,13 +34,24 @@ Game::~Game()
 /// </summary>
 void Game::initialise()
 {
+	//
 	m_playerView.setCenter(m_window.getSize().x / 2, m_window.getSize().y);
 	m_playerView.setSize(1500, 900);
 	m_playerView.zoom(1.0f);
+	//
+	m_miniMapView.reset(sf::FloatRect(0, 0, m_window.getSize().x / 2, m_window.getSize().y / 2));
+	m_miniMapView.setViewport(sf::FloatRect(1.2f - (1.0f * m_miniMapView.getSize().x) / m_window.getSize().x - 0.04f, // RectLeft
+											0.3f - (1.0f * m_miniMapView.getSize().y) / m_window.getSize().y - 0.02f, // RectTop
+											(1.0f * m_miniMapView.getSize().x) / m_window.getSize().x, // RectWidth
+											(1.0f * m_miniMapView.getSize().y) / m_window.getSize().y)); // RectHeight
+	m_miniMapView.zoom(25.0f);
 
-	m_tileMap = new TileMap((float)50.0f);
+	m_tileMap = new TileMap((float)20.0f);
 
 	m_player = new Player();
+	m_miniPlayer = new Player();
+
+	m_miniMap = new MiniMap(m_miniPlayer);
 }
 
 /// <summary>
@@ -153,10 +164,14 @@ void Game::update(sf::Time deltaTime)
 		m_window.close();
 	}
 
+	m_miniMap->update(deltaTime, m_window, m_miniMapView);
+
 	m_tileMap->update(deltaTime, m_window);
 
 	m_player->update(deltaTime, m_playerView);
+	m_miniPlayer->setPosition(m_player->getPosition());
 
+	
 }
 
 /// <summary>
@@ -169,6 +184,8 @@ void Game::render()
 	m_tileMap->render(m_window);
 
 	m_player->render(m_window);
+
+	m_miniMap->render(m_window, m_miniMapView);
 
 	m_window.setView(m_playerView);
 	m_window.display();

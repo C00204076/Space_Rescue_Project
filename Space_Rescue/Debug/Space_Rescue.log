@@ -1,14 +1,30 @@
 ﻿  Game.cpp
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(37,69): warning C4244:  'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(37,69): warning C4244:         with
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(37,69): warning C4244:         [
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(37,69): warning C4244:             T=unsigned int
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(37,69): warning C4244:         ]
-  main.cpp
-  Generating Code...
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(37,46): warning C4244:  'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(37,46): warning C4244:         with
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(37,46): warning C4244:         [
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(37,46): warning C4244:             T=unsigned int
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(37,46): warning C4244:         ]
-  Space_Rescue.vcxproj -> C:\Users\gameuser\Desktop\Space_Rescue_Project\Debug\Space_Rescue.exe
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(38,69): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(38,69): warning C4244:         with
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(38,69): warning C4244:         [
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(38,69): warning C4244:             T=unsigned int
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(38,69): warning C4244:         ]
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(38,46): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(38,46): warning C4244:         with
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(38,46): warning C4244:         [
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(38,46): warning C4244:             T=unsigned int
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(38,46): warning C4244:         ]
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         with
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         [
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:             T=unsigned int
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         ]
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         and
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         [
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:             T=float
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         ]
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         with
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         [
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:             T=unsigned int
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         ]
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         and
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         [
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:             T=float
+C:\Users\Brandon\Desktop\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         ]
+  Space_Rescue.vcxproj -> C:\Users\Brandon\Desktop\Space_Rescue_Project\Debug\Space_Rescue.exe

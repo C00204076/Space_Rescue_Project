@@ -15,6 +15,7 @@
 
 class TileMap;
 class Player;
+class MiniMap;
 
 //
 class Game
@@ -41,9 +42,13 @@ private:
 	TileMap* m_tileMap;
 
 	Player* m_player;
+	Player* m_miniPlayer;
+
+	MiniMap* m_miniMap;
 };
 
 #include "TileMap.h"
 #include "Player.h"
+#include "MiniMap.h"
 
 #endif // !GAME_H
