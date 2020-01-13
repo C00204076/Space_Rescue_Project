@@ -35,10 +35,16 @@ private:
 	void initialise();
 	void loadTexture();
 
+	void spawnPowerUp();
+	void powerUpLifeTime();
+	void animatePowerUp();
+
+	sf::Vector2f m_position;
 	sf::Sprite m_sprite;
 	sf::Texture m_textureOne, m_textureTwo;
 
 	int m_type;
+	int m_activeTime, m_animaTime, m_respawnTime; 
 
 	bool m_active;
 };

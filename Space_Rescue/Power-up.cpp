@@ -26,6 +26,20 @@ PowerUp::~PowerUp()
 void PowerUp::initialise()
 {
 	loadTexture();
+	//
+	m_activeTime = 500;
+	m_animaTime = 0;
+	m_respawnTime = 0;
+	m_type = 1;
+	//
+	m_position = sf::Vector2f(400, 500);
+	//
+	m_sprite.setTexture(m_textureOne);
+	m_sprite.setOrigin(m_sprite.getTexture()->getSize().x / 2, 
+					   m_sprite.getTexture()->getSize().y / 2);
+	m_sprite.setPosition(m_position);
+	//
+	m_active = true;
 }
 
 // 
@@ -45,11 +59,70 @@ void PowerUp::loadTexture()
 }
 
 //
+void PowerUp::spawnPowerUp()
+{
+	//
+	m_respawnTime++;
+	//
+	if (m_active == false && m_respawnTime > 500)
+	{
+		m_active = true;
+		m_respawnTime = 0;
+		m_activeTime = 500;
+	}
+}
+
+//
+void PowerUp::powerUpLifeTime()
+{
+	//
+	m_activeTime--;
+	std::cout << m_activeTime << std::endl;;
+
+	//
+	if (m_activeTime < 100)
+	{
+		animatePowerUp();
+	}
+	//
+	else if (m_activeTime < 0)
+	{
+		m_active = false;
+	}
+}
+
+//
+void PowerUp::animatePowerUp()
+{
+	//
+	m_animaTime++;
+
+	//
+	if (m_animaTime < 10)
+	{
+		m_sprite.setColor(sf::Color::White);
+	}
+	//
+	else if (m_animaTime > 10 && m_animaTime < 20)
+	{
+		m_sprite.setColor(sf::Color::Transparent);
+	}
+	//
+	else if (m_animaTime > 20)
+	{
+		m_animaTime = 0;
+	}
+}
+
+//
 void PowerUp::update(sf::Time deltaTime)
 {
+	//
+	spawnPowerUp();
+	//
 	if (m_active == true)
 	{
-
+		powerUpLifeTime();
 	}
 }
 

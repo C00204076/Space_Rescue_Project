@@ -47,11 +47,15 @@ void Game::initialise()
 	m_miniMapView.zoom(25.0f);
 
 	m_tileMap = new TileMap((float)20.0f);
+	m_miniTile = new TileMap((float)20.0f);
 
 	m_player = new Player();
 	m_miniPlayer = new Player();
 
-	m_miniMap = new MiniMap(m_miniPlayer);
+	m_powerUp = new PowerUp();
+	m_miniPower = new PowerUp();
+
+	m_miniMap = new MiniMap(m_miniTile, m_miniPlayer);//m_miniPower);
 }
 
 /// <summary>
@@ -163,14 +167,14 @@ void Game::update(sf::Time deltaTime)
 	{
 		m_window.close();
 	}
-
+	//
 	m_miniMap->update(deltaTime, m_window, m_miniMapView);
-
+	//
 	m_tileMap->update(deltaTime, m_window);
-
+	//
 	m_player->update(deltaTime, m_playerView);
-	m_miniPlayer->setPosition(m_player->getPosition());
-
+	//
+	m_powerUp->update(deltaTime);
 	
 }
 
@@ -180,13 +184,15 @@ void Game::update(sf::Time deltaTime)
 void Game::render()
 {
 	m_window.clear(sf::Color::Black); //Set background to black
-
+	//
 	m_tileMap->render(m_window);
-
+	//
 	m_player->render(m_window);
-
+	//
+	m_powerUp->render(m_window);
+	//
 	m_miniMap->render(m_window, m_miniMapView);
-
+	//
 	m_window.setView(m_playerView);
 	m_window.display();
 }

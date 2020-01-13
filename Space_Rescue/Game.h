@@ -16,6 +16,7 @@
 class TileMap;
 class Player;
 class MiniMap;
+class PowerUp;
 
 //
 class Game
@@ -40,9 +41,13 @@ private:
 	bool is_running;
 
 	TileMap* m_tileMap;
+	TileMap* m_miniTile;
 
 	Player* m_player;
 	Player* m_miniPlayer;
+
+	PowerUp* m_powerUp;
+	PowerUp* m_miniPower;
 
 	MiniMap* m_miniMap;
 };
@@ -50,5 +55,6 @@ private:
 #include "TileMap.h"
 #include "Player.h"
 #include "MiniMap.h"
+#include "Power-up.h"
 
 #endif // !GAME_H

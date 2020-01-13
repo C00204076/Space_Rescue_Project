@@ -24,7 +24,9 @@
 class MiniMap
 {
 public:
-	MiniMap(Player* player);
+	// Added new arguments to constructor to add more
+	// objects of minimap
+	MiniMap(TileMap* tileMap, Player* player);//PowerUp* powerUp
 	~MiniMap();
 
 	void update(sf::Time deltaTime, sf::RenderWindow& window, sf::View view);
@@ -33,8 +35,11 @@ public:
 private:
 	void initialise();
 
+	// Create more Object variable to hold constructor
+	// arguements
 	TileMap* m_tileMap;
 	Player* m_player;
+	PowerUp* m_powerUp;
 };
 
 #endif // !MINIMAP_H

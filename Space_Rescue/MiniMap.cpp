@@ -11,8 +11,10 @@
 #include "MiniMap.h"
 
 //
-MiniMap::MiniMap(Player* player) :
+MiniMap::MiniMap(TileMap* tileMap, Player* player) :
+	m_tileMap(tileMap),
 	m_player(player)
+	//m_powerUp(powerUp)
 {
 	initialise();
 }
@@ -42,5 +44,9 @@ void MiniMap::render(sf::RenderWindow& window, sf::View view)
 	//
 	window.setView(view);
 	//
+	//m_tileMap->render(window, sf::Vector2f(3.0f, 3.0f));
+	//
 	m_player->render(window, sf::Vector2f(3.0f, 3.0f));
+	//
+	//m_powerUp->render(window, sf::Vector2f(3.0f, 3.0f));
 }

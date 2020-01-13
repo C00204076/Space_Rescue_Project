@@ -43,6 +43,8 @@ void Tile::initialise()
 
 	m_position.x = m_x * 75;
 	m_position.y = m_y * 75;
+
+	m_type = 1;
 }
 
 

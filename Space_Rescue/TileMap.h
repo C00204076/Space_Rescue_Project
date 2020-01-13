@@ -22,6 +22,7 @@ public:
 
 	void update(sf::Time deltaTime, sf::RenderWindow& window);
 	void render(sf::RenderWindow& window);
+	void render(sf::RenderWindow& window, sf::Vector2f scale);
 
 	void setValues();
 
