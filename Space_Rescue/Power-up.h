@@ -24,6 +24,10 @@ public:
 
 	void update(sf::Time deltaTime);
 	void render(sf::RenderWindow& window);
+	void render(sf::RenderWindow& window, sf::Vector2f scale);
+
+	sf::Vector2f getPosition();
+	void setPosition(sf::Vector2f position);
 
 	void setType(int type);
 	int getType();

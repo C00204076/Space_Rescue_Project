@@ -1,1 +1,2 @@
-﻿LINK : fatal error LNK1104: cannot open file 'C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Debug\Space_Rescue.exe'
+﻿  MiniMap.cpp
+  Space_Rescue.vcxproj -> C:\Users\gameuser\Desktop\Space_Rescue_Project\Debug\Space_Rescue.exe

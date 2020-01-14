@@ -55,7 +55,7 @@ void Game::initialise()
 	m_powerUp = new PowerUp();
 	m_miniPower = new PowerUp();
 
-	m_miniMap = new MiniMap(m_miniTile, m_miniPlayer);//m_miniPower);
+	m_miniMap = new MiniMap(m_miniTile, m_miniPlayer, m_miniPower);
 }
 
 /// <summary>
@@ -175,6 +175,7 @@ void Game::update(sf::Time deltaTime)
 	m_player->update(deltaTime, m_playerView);
 	//
 	m_powerUp->update(deltaTime);
+	m_miniPower->setPosition(m_powerUp->getPosition());
 	
 }
 
