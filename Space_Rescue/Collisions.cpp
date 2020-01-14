@@ -19,7 +19,7 @@ Collisions::Collisions()
 //
 Collisions::~Collisions()
 {
-
+	delete this;
 }
 
 //

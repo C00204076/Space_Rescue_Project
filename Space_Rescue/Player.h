@@ -15,6 +15,8 @@
 
 #include "SFML/Graphics.hpp"
 
+class Missile;
+
 class Player
 {
 public:
@@ -38,6 +40,10 @@ public:
 	bool getSpeed();
 	void setSpeed(bool speed);
 
+	int getHP();
+	void setHP(int hp);
+
+	void setFireDelay(int fireDelay);
 
 private:
 	void initalise();
@@ -46,16 +52,22 @@ private:
 	void move();
 	
 	void powerup();
+	void iFrames();
 
+	void fire();
 
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;
 	sf::Vector2f m_position, m_velocity;
 
-
 	float m_maxSpeed, m_addedSpeed;
+	int m_hp, m_iFrameTime, m_animateTime, m_fireDelay;
 
-	bool m_immune, m_speed;
+	bool m_immune, m_speed, m_hit;
+
+	Missile* m_bullet;
 };
+
+#include "Missile.h"
 
 #endif // !PLAYER_H

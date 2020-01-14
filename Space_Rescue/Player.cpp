@@ -28,18 +28,25 @@ void Player::initalise()
 	loadTexture();
 
 	//
+	m_bullet = new Missile(true, false);
+
+	//
+	m_hp = 3;
+	m_iFrameTime = 0;
+	m_animateTime = 0;
 	m_maxSpeed = 16;
 	m_addedSpeed = 0.0f;
+	m_fireDelay = 0;
 	m_position = sf::Vector2f(500, 400);
 	//
 	m_sprite.setTexture(m_texture);
 	m_sprite.setOrigin(25, 25);
 	m_sprite.setPosition(m_position);
 	m_sprite.setRotation(0);
-
 	//
 	m_immune = false;
 	m_speed = false;
+	m_hit = false;
 }
 
 //
@@ -100,22 +107,77 @@ void Player::powerup()
 	//
 	if (m_speed == true)
 	{
+		m_sprite.setColor(sf::Color::Yellow);
 		m_addedSpeed = 0.3f;
 	}
 	//
 	else if (m_speed == false)
 	{
+		m_sprite.setColor(sf::Color::White);
 		m_addedSpeed = 0.0f;
 	}
 
 	//
 	if (m_immune == true)
 	{
-
+		m_sprite.setColor(sf::Color::Red);
 	}
 	else if (m_immune == false)
 	{
+		m_sprite.setColor(sf::Color::White);
+	}
+}
 
+//
+void Player::iFrames()
+{
+	if (m_hit == true && m_hp > 0)
+	{
+		m_iFrameTime++;
+		m_animateTime++;
+
+		if (m_iFrameTime == 250)
+		{
+			m_hit = false;
+			m_animateTime = 0;
+			m_iFrameTime = 0;
+		}
+
+		//
+		if (m_animateTime < 5)
+		{
+			m_sprite.setColor(sf::Color::White);
+		}
+		//
+		else if (m_animateTime > 5 && m_animateTime < 10)
+		{
+			m_sprite.setColor(sf::Color::Transparent);
+		}
+		//
+		else if (m_animateTime > 10)
+		{
+			m_animateTime = 0;
+		}
+	}
+}
+
+//
+void Player::fire()
+{
+	//
+	if (m_fireDelay > 0)
+	{
+		m_fireDelay--;
+	}
+
+	//
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && m_fireDelay <= 0)
+	{
+		
+		m_fireDelay = 150;
+		m_bullet->setPosition(m_position);
+		m_bullet->setRotation(this);
+		m_bullet->setActive(true);
 	}
 }
 
@@ -127,12 +189,19 @@ void Player::update(sf::Time deltaTime, sf::View &v)
 	//
 	powerup();
 	//
+	iFrames();
+	//
+	fire();
+	m_bullet->update(deltaTime);
+	//
 	v.setCenter(m_position.x, m_position.y);
 }
 
 //
 void Player::render(sf::RenderWindow& window)
 {
+	m_bullet->render(window);
+
 	window.draw(m_sprite);
 }
 
@@ -189,4 +258,21 @@ bool Player::getSpeed()
 void Player::setSpeed(bool speed)
 {
 	m_speed = speed;
+}
+
+//
+int Player::getHP()
+{
+	return m_hp;
+}
+//
+void Player::setHP(int hp)
+{
+	m_hp = hp;
+}
+
+//
+void Player::setFireDelay(int fireDelay)
+{
+	m_fireDelay = fireDelay
 }
