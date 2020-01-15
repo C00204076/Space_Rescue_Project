@@ -46,8 +46,8 @@ void Game::initialise()
 											(1.0f * m_miniMapView.getSize().y) / m_window.getSize().y)); // RectHeight
 	m_miniMapView.zoom(25.0f);
 
-	m_tileMap = new TileMap((float)20.0f);
-	m_miniTile = new TileMap((float)20.0f);
+	m_tileMap = new TileMap((float)30.0f);
+	m_miniTile = new TileMap((float)30.0f);
 
 	m_player = new Player();
 	m_miniPlayer = new Player();

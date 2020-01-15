@@ -40,6 +40,12 @@ public:
 	bool getSpeed();
 	void setSpeed(bool speed);
 
+	bool getCollide();
+	void setCollide(bool collide);
+
+	bool getHit();
+	void setHit(bool hit);
+
 	int getHP();
 	void setHP(int hp);
 
@@ -56,6 +62,8 @@ private:
 
 	void fire();
 
+	void collision();
+
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;
 	sf::Vector2f m_position, m_velocity;
@@ -63,7 +71,7 @@ private:
 	float m_maxSpeed, m_addedSpeed;
 	int m_hp, m_iFrameTime, m_animateTime, m_fireDelay;
 
-	bool m_immune, m_speed, m_hit;
+	bool m_immune, m_speed, m_hit, m_collide;
 
 	Missile* m_bullet;
 };

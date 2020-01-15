@@ -44,7 +44,7 @@ void MiniMap::render(sf::RenderWindow& window, sf::View view)
 	//
 	window.setView(view);
 	//
-	//m_tileMap->render(window, sf::Vector2f(3.0f, 3.0f));
+	m_tileMap->render(window, sf::Vector2f(3.0f, 3.0f));
 	//
 	m_player->render(window, sf::Vector2f(3.0f, 3.0f));
 	//

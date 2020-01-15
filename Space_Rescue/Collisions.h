@@ -18,6 +18,7 @@
 #include "TileMap.h"
 #include "Player.h"
 #include "Power-up.h"
+#include "Missile.h"
 
 //
 class Collisions
@@ -28,6 +29,13 @@ public:
 
 	void playerPowerUpCollision(Player* player, PowerUp* powerup);
 	void playerTileCollision(Player* player, TileMap* tilemap);
+	void playerMissileCollision(Player* player, Missile* missile);
+	void playerEnemyCollision(Player* player);
+	void enemyMissileCollision();
+	void enemyTileCollision();
+	void playerWorkerCollision(Player* player);
+	void enemyWorkerCollision();
+	void workerTileCollision();
 
 private:
 

@@ -43,7 +43,7 @@ void Missile::initialise()
 	m_sprite.setPosition(m_position);
 	m_sprite.setRotation(0);
 	//
-	m_velocity = sf::Vector2f(10.0f, 10.0f);
+	m_velocity = sf::Vector2f(15.0f, 15.0f);
 	//
 	m_lifeTime = 200;
 	//
@@ -180,4 +180,10 @@ void Missile::setActive(bool active)
 bool Missile::getActive()
 {
 	return m_active;
+}
+
+//
+void Missile::setLifeTime(int lifeTime)
+{
+	m_lifeTime = lifeTime;
 }

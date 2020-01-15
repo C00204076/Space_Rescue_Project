@@ -1,23 +1,2 @@
-﻿  Missile.cpp
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(42,44): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(42,44): warning C4244:         with
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(42,44): warning C4244:         [
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(42,44): warning C4244:             T=unsigned int
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(42,44): warning C4244:         ]
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(41,56): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(41,56): warning C4244:         with
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(41,56): warning C4244:         [
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(41,56): warning C4244:             T=unsigned int
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(41,56): warning C4244:         ]
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(76,84): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(76,84): warning C4244:         with
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(76,84): warning C4244:         [
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(76,84): warning C4244:             T=float
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(76,84): warning C4244:         ]
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(77,85): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(77,85): warning C4244:         with
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(77,85): warning C4244:         [
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(77,85): warning C4244:             T=float
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(77,85): warning C4244:         ]
-C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Missile.cpp(125,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+﻿  TileMap.cpp
   Space_Rescue.vcxproj -> C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Debug\Space_Rescue.exe

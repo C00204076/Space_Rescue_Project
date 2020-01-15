@@ -35,6 +35,8 @@ public:
 	void setActive(bool active);
 	bool getActive();
 
+	void setActiveTime(int lifeTime);
+
 private:
 	void initialise();
 	void loadTexture();
@@ -50,7 +52,7 @@ private:
 	int m_type;
 	int m_activeTime, m_animaTime, m_respawnTime; 
 
-	bool m_active;
+	bool m_active, m_collide;
 };
 
 #endif // !POWERUP_H

@@ -178,6 +178,12 @@ void PowerUp::setPosition(sf::Vector2f position)
 	m_position = position;
 	m_sprite.setPosition(position);
 }
+
+//
+void PowerUp::setActiveTime(int lifeTime)
+{
+	m_activeTime = lifeTime;
+}
 //
 
 // Get Methods

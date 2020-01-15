@@ -62,43 +62,48 @@ void Player::loadTexture()
 void Player::move()
 {
 	//
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	{
-		m_sprite.rotate(-2.0f);
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-	{
-		m_sprite.rotate(2.0f);
-	}
-
-	//
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	if (m_collide == false)
 	{
 		//
-		if (m_velocity.y < m_maxSpeed)
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		{
-			m_velocity.x += 0.1f + m_addedSpeed;
-			m_velocity.y += 0.1f + m_addedSpeed;
+			m_sprite.rotate(-2.0f);
 		}
-	}
-	//
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	{
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		{
+			m_sprite.rotate(2.0f);
+		}
+
 		//
-		if (m_velocity.y > 0.0f)
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		{
-			m_velocity.x -= 0.1f + m_addedSpeed;
-			m_velocity.y -= 0.1f + m_addedSpeed;
+			//
+			if (m_velocity.y < m_maxSpeed)
+			{
+				m_velocity.x += 0.1f + m_addedSpeed;
+				m_velocity.y += 0.1f + m_addedSpeed;
+			}
+		}
+		//
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		{
+			//
+			if (m_velocity.y > 0.0f)
+			{
+				m_velocity.x -= 0.1f + m_addedSpeed;
+				m_velocity.y -= 0.1f + m_addedSpeed;
+			}
+		}
+
+
+		if (m_maxSpeed > 0.0f)
+		{
+			m_position.x += (sin(m_sprite.getRotation() * (3.14159265 / 180)) * m_velocity.y);
+			m_position.y += (-cos(m_sprite.getRotation() * (3.14159265 / 180)) * m_velocity.y);
+			m_sprite.setPosition(m_position);
 		}
 	}
 
-
-	if (m_maxSpeed > 0.0f)
-	{
-		m_position.x += (sin(m_sprite.getRotation() * (3.14159265 / 180)) * m_velocity.y);
-		m_position.y += (-cos(m_sprite.getRotation() * (3.14159265 / 180)) * m_velocity.y);
-		m_sprite.setPosition(m_position);
-	}
 }
 
 //
@@ -173,11 +178,25 @@ void Player::fire()
 	//
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && m_fireDelay <= 0)
 	{
-		
-		m_fireDelay = 150;
-		m_bullet->setPosition(m_position);
-		m_bullet->setRotation(this);
-		m_bullet->setActive(true);
+		if (m_bullet->getActive() == false)
+		{
+			m_fireDelay = 150;
+			m_bullet->setPosition(m_position);
+			m_bullet->setRotation(this);
+			m_bullet->setActive(true);
+			m_bullet->setLifeTime(200);
+		}
+	}
+}
+
+//
+void Player::collision()
+{
+	if (m_collide == true)
+	{
+		m_position.x -= (sin(m_sprite.getRotation() * (3.14159265 / 180)) * m_velocity.y);
+		m_position.y -= (-cos(m_sprite.getRotation() * (3.14159265 / 180)) * m_velocity.y);
+		m_sprite.setPosition(m_position);
 	}
 }
 
@@ -261,6 +280,28 @@ void Player::setSpeed(bool speed)
 }
 
 //
+bool Player::getCollide()
+{
+	return m_collide;
+}
+//
+void Player::setCollide(bool collide)
+{
+	m_collide = collide;
+}
+
+//
+bool Player::getHit()
+{
+	return m_hit;
+}
+//
+void Player::setHit(bool hit)
+{
+	m_hit = hit;
+}
+
+//
 int Player::getHP()
 {
 	return m_hp;
@@ -274,5 +315,5 @@ void Player::setHP(int hp)
 //
 void Player::setFireDelay(int fireDelay)
 {
-	m_fireDelay = fireDelay
+	m_fireDelay = fireDelay;
 }

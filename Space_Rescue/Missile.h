@@ -44,6 +44,7 @@ public:
 	void setActive(bool active);
 	bool getActive();
 
+	void setLifeTime(int lifeTime);
 
 
 private:
