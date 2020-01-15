@@ -1,2 +1,35 @@
-﻿  TileMap.cpp
+﻿  Collisions.cpp
+  Game.cpp
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(38,69): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(38,69): warning C4244:         with
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(38,69): warning C4244:         [
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(38,69): warning C4244:             T=unsigned int
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(38,69): warning C4244:         ]
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(38,46): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(38,46): warning C4244:         with
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(38,46): warning C4244:         [
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(38,46): warning C4244:             T=unsigned int
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(38,46): warning C4244:         ]
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         with
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         [
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:             T=unsigned int
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         ]
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         and
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         [
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:             T=float
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,89): warning C4244:         ]
+  MiniMap.cpp
+  TileMap.cpp
+  main.cpp
+  Generating Code...
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         with
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         [
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:             T=unsigned int
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         ]
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         and
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         [
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:             T=float
+C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Space_Rescue\Game.cpp(42,63): warning C4244:         ]
   Space_Rescue.vcxproj -> C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Debug\Space_Rescue.exe
