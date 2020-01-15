@@ -31,7 +31,6 @@ public:
 
 	sf::Vector2f getVelocity();
 
-
 private:
 	void initalise();
 	void loadTexture();
@@ -44,6 +43,7 @@ private:
 	sf::Texture m_texture;
 	sf::Vector2f m_position, m_velocity;
 
+	sf::Vertex m_center;
 
 	float m_maxSpeed;
 };

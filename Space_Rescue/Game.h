@@ -15,7 +15,7 @@
 
 class TileMap;
 class Player;
-
+class Predator;
 //
 class Game
 {
@@ -41,9 +41,11 @@ private:
 	TileMap* m_tileMap;
 
 	Player* m_player;
+
+	Predator* m_predator;
 };
 
 #include "TileMap.h"
 #include "Player.h"
-
+#include "Predator.h"
 #endif // !GAME_H

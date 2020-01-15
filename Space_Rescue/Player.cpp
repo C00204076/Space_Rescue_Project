@@ -35,6 +35,8 @@ void Player::initalise()
 	m_sprite.setOrigin(25, 25);
 	m_sprite.setPosition(m_position);
 	m_sprite.setRotation(0);
+
+	m_center = m_position;
 }
 
 //
@@ -96,12 +98,15 @@ void Player::update(sf::Time deltaTime, sf::View & v)
 	move();
 	//
 	v.setCenter(m_position.x, m_position.y);
+
+	m_center = m_position;
 }
 
 //
 void Player::render(sf::RenderWindow& window)
 {
 	window.draw(m_sprite);
+	window.draw(&m_center,1,sf::Points);
 }
 
 //

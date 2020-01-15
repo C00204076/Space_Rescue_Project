@@ -41,6 +41,8 @@ void Game::initialise()
 	m_tileMap = new TileMap((float)50.0f);
 
 	m_player = new Player();
+
+	m_predator = new Predator();
 }
 
 /// <summary>
@@ -157,6 +159,8 @@ void Game::update(sf::Time deltaTime)
 
 	m_player->update(deltaTime, m_playerView);
 
+	m_predator->update(deltaTime);
+	m_predator->detection(m_player->getPosition());
 }
 
 /// <summary>
@@ -170,6 +174,7 @@ void Game::render()
 
 	m_player->render(m_window);
 
+	m_predator->render(m_window);
 	m_window.setView(m_playerView);
 	m_window.display();
 }
