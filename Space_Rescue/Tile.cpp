@@ -36,13 +36,15 @@ void Tile::initialise()
 {
 	m_value = 1;
 
-	m_square.setSize(sf::Vector2f(75, 75));
+	m_square.setSize(sf::Vector2f(90, 90));
 	setColour();
 	m_square.setOutlineColor(sf::Color::Black);
-	m_square.setPosition(m_x * 75, m_y * 75);
+	m_square.setPosition(m_x * 90, m_y * 90);
 
-	m_position.x = m_x * 75;
-	m_position.y = m_y * 75;
+	m_position.x = m_x * 90;
+	m_position.y = m_y * 90;
+
+	m_type = 1;
 }
 
 
@@ -86,15 +88,15 @@ void Tile::setColour()
 		m_type = 0;
 	}
 	//
-	else if (m_type > 4)
+	else if (m_type > 9)
 	{
-		m_type = 4;
+		m_type = 9;
 	}
 
 	//
 	if (m_type == 0)
 	{
-		m_square.setFillColor(sf::Color::Blue);
+		m_square.setFillColor(sf::Color(250, 250, 250, 125));
 	}
 	//
 	else if (m_type == 1)
@@ -118,6 +120,12 @@ void Tile::setColour()
 	else if (m_type == 4)
 	{
 		m_square.setFillColor(sf::Color::Yellow);
+	}
+
+	//
+	else if (m_type == 9)
+	{
+		m_square.setFillColor(sf::Color(250, 250, 250, 80));
 	}
 }
 

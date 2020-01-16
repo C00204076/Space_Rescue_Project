@@ -1,14 +1,1 @@
-﻿  Tile.cpp
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(42,37): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(42,27): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(44,21): warning C4244:  '=': conversion from 'int' to 'T', possible loss of data
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(44,21): warning C4244:         with
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(44,21): warning C4244:         [
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(44,21): warning C4244:             T=float
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(44,21): warning C4244:         ]
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(45,21): warning C4244:  '=': conversion from 'int' to 'T', possible loss of data
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(45,21): warning C4244:         with
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(45,21): warning C4244:         [
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(45,21): warning C4244:             T=float
-C:\Users\gameuser\Desktop\Space_Rescue_Project\Space_Rescue\Tile.cpp(45,21): warning C4244:         ]
-  Space_Rescue.vcxproj -> C:\Users\gameuser\Desktop\Space_Rescue_Project\Debug\Space_Rescue.exe
+﻿LINK : fatal error LNK1104: cannot open file 'C:\Users\Brandon\Desktop\College\Space_Rescue_Project\Debug\Space_Rescue.exe'
