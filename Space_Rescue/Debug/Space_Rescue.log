@@ -1,3 +1,0 @@
-﻿  Predator.cpp
-C:\Users\halo2\Desktop\Space_Rescue_Project\Space_Rescue\Predator.cpp(53,135): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-  Space_Rescue.vcxproj -> C:\Users\halo2\Desktop\Space_Rescue_Project\Debug\Space_Rescue.exe

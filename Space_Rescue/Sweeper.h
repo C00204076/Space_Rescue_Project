@@ -12,16 +12,17 @@ public:
 private:
 	sf::CircleShape m_body;
 	sf::CircleShape m_coneOfVision;
-	sf::RectangleShape m_rect;
 
 	float m_coneOfVisionLength;
-	float m_angle;
+	float m_angles[6];
+
+	sf::Vector2f m_detectionPoints[6];
 	sf::Vector2f m_visionOrigin;
 
 	sf::Vector2f m_coneRelativePos;
 	sf::Vector2f m_visionOriginRelative;
 
-	sf::Vertex m_center;
+	sf::Vertex m_points[6];
 };
 
 #endif

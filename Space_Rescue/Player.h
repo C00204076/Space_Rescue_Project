@@ -44,6 +44,7 @@ private:
 	sf::Vector2f m_position, m_velocity;
 
 	sf::Vertex m_center;
+	sf::CircleShape m_circle;
 
 	float m_maxSpeed;
 };
