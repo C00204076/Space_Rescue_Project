@@ -43,6 +43,8 @@ void Game::initialise()
 	m_player = new Player();
 
 	m_predator = new Predator();
+
+	m_worker = new Worker();
 }
 
 /// <summary>
@@ -159,8 +161,10 @@ void Game::update(sf::Time deltaTime)
 
 	m_player->update(deltaTime, m_playerView);
 
-	m_predator->update(deltaTime);
+	m_predator->update(deltaTime, m_player->getPosition(),m_player->getVelocity());
 	m_predator->detection(m_player->getPosition());
+
+	m_worker->update(deltaTime);
 }
 
 /// <summary>
@@ -175,6 +179,9 @@ void Game::render()
 	m_player->render(m_window);
 
 	m_predator->render(m_window);
+
+	m_worker->render(m_window);
+
 	m_window.setView(m_playerView);
 	m_window.display();
 }
