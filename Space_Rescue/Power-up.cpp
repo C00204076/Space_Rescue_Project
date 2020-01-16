@@ -204,4 +204,10 @@ sf::Vector2f PowerUp::getPosition()
 {
 	return m_position;
 }
+
+//
+sf::Sprite PowerUp::getSprite()
+{
+	return m_sprite;
+}
 //

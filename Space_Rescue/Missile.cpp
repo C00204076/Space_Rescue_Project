@@ -20,7 +20,7 @@ Missile::Missile(bool isPlayer, bool isNest) :
 
 Missile::~Missile()
 {
-	delete this;
+	//delete this;
 }
 
 //
@@ -43,7 +43,7 @@ void Missile::initialise()
 	m_sprite.setPosition(m_position);
 	m_sprite.setRotation(0);
 	//
-	m_velocity = sf::Vector2f(15.0f, 15.0f);
+	m_velocity = sf::Vector2f(30.0f, 30.0f);
 	//
 	m_lifeTime = 200;
 	//

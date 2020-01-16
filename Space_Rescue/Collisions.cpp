@@ -19,27 +19,31 @@ Collisions::Collisions()
 //
 Collisions::~Collisions()
 {
-	delete this;
+	//delete this;
 }
 
 //
 void Collisions::playerPowerUpCollision(Player* player, PowerUp* powerup)
 {
 	//
-	if (powerup->getType() == 1)
+	if (player->getSprite().getGlobalBounds().intersects(powerup->getSprite().getGlobalBounds()))
 	{
-		player->setImmune(true);
-		player->setSpeed(false);
-	}
-	//
-	else if(powerup->getType() == 2)
-	{
-		player->setImmune(false);
-		player->setSpeed(true);
-	}
+		//
+		if (powerup->getType() == 1)
+		{
+			player->setImmune(true);
+			player->setSpeed(false);
+		}
+		//
+		else if (powerup->getType() == 2)
+		{
+			player->setImmune(false);
+			player->setSpeed(true);
+		}
 
-	powerup->setActiveTime(0);
-	powerup->setActive(0);
+		powerup->setActiveTime(0);
+		powerup->setActive(0);
+	}
 }
 
 //
@@ -51,7 +55,14 @@ void Collisions::playerTileCollision(Player* player, TileMap* tilemap)
 //
 void Collisions::playerMissileCollision(Player* player, Missile* missile)
 {
-	player->setHit(true);
+	//
+	if (missile->getIsNest() == true && missile->getIsPlayer() == true)
+	{
+		if (player->getSprite().getGlobalBounds().intersects(missile->getSprite().getGlobalBounds()))
+		{
+			player->setHit(true);
+		}
+	}
 }
 
 //
@@ -88,4 +99,18 @@ void Collisions::enemyWorkerCollision()
 void Collisions::workerTileCollision()
 {
 
+}
+
+//
+void Collisions::update(Player* player, TileMap* tilemap, PowerUp* powerup, Missile* missile)
+{
+	playerPowerUpCollision(player, powerup);
+	//playerTileCollision(player, tilemap);
+	//playerMissileCollision(player, missile);
+	//playerEnemyCollision(player);
+	//enemyMissileCollision();
+	//enemyTileCollision();
+	//playerWorkerCollision(player);
+	//enemyWorkerCollision();
+	//workerTileCollision();
 }

@@ -34,7 +34,7 @@ void Player::initalise()
 	m_hp = 3;
 	m_iFrameTime = 0;
 	m_animateTime = 0;
-	m_maxSpeed = 16;
+	m_maxSpeed = 12;
 	m_addedSpeed = 0.0f;
 	m_fireDelay = 0;
 	m_position = sf::Vector2f(500, 400);
@@ -197,6 +197,9 @@ void Player::collision()
 		m_position.x -= (sin(m_sprite.getRotation() * (3.14159265 / 180)) * m_velocity.y);
 		m_position.y -= (-cos(m_sprite.getRotation() * (3.14159265 / 180)) * m_velocity.y);
 		m_sprite.setPosition(m_position);
+
+		m_velocity.x -= 0.4f + m_addedSpeed;
+		m_velocity.y -= 0.4f + m_addedSpeed;
 	}
 }
 
@@ -215,6 +218,13 @@ void Player::update(sf::Time deltaTime, sf::View &v)
 	//
 	v.setCenter(m_position.x, m_position.y);
 }
+/// <summary>
+/// bullets[i]->~bullet();
+/// bullets[i] = nullptr;
+/// bullets.erase(bullets.begin() + i);
+/// i--;
+/// </summary>
+
 
 //
 void Player::render(sf::RenderWindow& window)
@@ -316,4 +326,10 @@ void Player::setHP(int hp)
 void Player::setFireDelay(int fireDelay)
 {
 	m_fireDelay = fireDelay;
+}
+
+//
+Missile* Player::getMissile()
+{
+	return m_bullet;
 }

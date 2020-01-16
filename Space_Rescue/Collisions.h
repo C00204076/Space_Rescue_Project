@@ -27,6 +27,9 @@ public:
 	Collisions();
 	~Collisions();
 
+	void update(Player* player, TileMap* tilemap, PowerUp* powerup, Missile* missile);
+
+private:
 	void playerPowerUpCollision(Player* player, PowerUp* powerup);
 	void playerTileCollision(Player* player, TileMap* tilemap);
 	void playerMissileCollision(Player* player, Missile* missile);
@@ -36,9 +39,6 @@ public:
 	void playerWorkerCollision(Player* player);
 	void enemyWorkerCollision();
 	void workerTileCollision();
-
-private:
-
 };
 
 #endif // !COLLISIONS_H

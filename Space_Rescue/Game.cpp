@@ -56,6 +56,8 @@ void Game::initialise()
 	m_miniPower = new PowerUp();
 
 	m_miniMap = new MiniMap(m_miniTile, m_miniPlayer, m_miniPower);
+
+	m_collision = Collisions();
 }
 
 /// <summary>
@@ -176,7 +178,8 @@ void Game::update(sf::Time deltaTime)
 	//
 	m_powerUp->update(deltaTime);
 	m_miniPower->setPosition(m_powerUp->getPosition());
-	
+	//
+	m_collision.update(m_player, m_tileMap, m_powerUp, m_player->getMissile());
 }
 
 /// <summary>

@@ -67,7 +67,7 @@ void TileMap::render(sf::RenderWindow& window, sf::Vector2f scale)
 	{
 		for (int j = 0; j < m_maxSize; j++)
 		{
-			if (m_tiles[i][j]->getType() == 2)
+			if (m_tiles[i][j]->getType() == 1)
 			{
 				m_tiles[i][j]->getRect().setScale(scale);
 				m_tiles[i][j]->render(window);

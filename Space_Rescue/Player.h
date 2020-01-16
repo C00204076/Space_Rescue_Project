@@ -51,6 +51,8 @@ public:
 
 	void setFireDelay(int fireDelay);
 
+	Missile* getMissile();
+
 private:
 	void initalise();
 	void loadTexture();
@@ -59,6 +61,7 @@ private:
 	
 	void powerup();
 	void iFrames();
+	
 
 	void fire();
 

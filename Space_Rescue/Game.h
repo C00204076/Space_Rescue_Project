@@ -12,6 +12,7 @@
 #define GAME_H
 
 #include <SFML/Graphics.hpp>
+#include "Collisions.h"
 
 class TileMap;
 class Player;
@@ -50,6 +51,8 @@ private:
 	PowerUp* m_miniPower;
 
 	MiniMap* m_miniMap;
+
+	Collisions m_collision;
 };
 
 #include "TileMap.h"
