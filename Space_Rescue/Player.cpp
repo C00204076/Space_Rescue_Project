@@ -180,6 +180,7 @@ void Player::fire()
 	{
 		if (m_bullet->getActive() == false)
 		{
+			//m_bullet = new Missile(true, false);
 			m_fireDelay = 150;
 			m_bullet->setPosition(m_position);
 			m_bullet->setRotation(this);

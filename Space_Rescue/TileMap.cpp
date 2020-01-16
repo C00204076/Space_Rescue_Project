@@ -31,7 +31,7 @@ void TileMap::initialise()
 		for (int j = 0; j < m_maxSize; j++)
 		{
 			m_tiles[i][j] = new Tile(m_map[i][j], i, j);
-
+			m_tiles[i][j]->setType(m_map[i][j]);
 		}
 	}
 
@@ -67,7 +67,7 @@ void TileMap::render(sf::RenderWindow& window, sf::Vector2f scale)
 	{
 		for (int j = 0; j < m_maxSize; j++)
 		{
-			if (m_tiles[i][j]->getType() == 1)
+			if (m_tiles[i][j]->getType() != 0)
 			{
 				m_tiles[i][j]->getRect().setScale(scale);
 				m_tiles[i][j]->render(window);

@@ -35,6 +35,7 @@ private:
 	void processInput();
 	void update(sf::Time deltaTime);
 	void render();
+	void clean();
 
 	sf::View m_playerView, m_miniMapView;
 

@@ -81,6 +81,7 @@ void Game::run()
 		}
 
 		render();
+		//clean();
 	}
 }
 
@@ -199,4 +200,10 @@ void Game::render()
 	//
 	m_window.setView(m_playerView);
 	m_window.display();
+}
+
+//
+void Game::clean()
+{
+	m_tileMap->~TileMap();
 }
