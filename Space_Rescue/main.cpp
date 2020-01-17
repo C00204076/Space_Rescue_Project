@@ -26,6 +26,7 @@
 #pragma comment(lib,"opengl32.lib") 
 #pragma comment(lib,"glu32.lib") 
 
+// Main function used to run game
 int main()
 {
 	Game game;

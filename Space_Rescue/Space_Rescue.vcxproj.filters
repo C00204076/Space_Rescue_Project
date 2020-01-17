@@ -30,7 +30,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="Worker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -38,7 +37,8 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Predator.cpp">
-=======
+	<Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="MiniMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -49,7 +49,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Missile.cpp">
->>>>>>> c05dba99402c413cabc80f6779ce50f6c585d61f
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -66,7 +65,6 @@
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="Worker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -74,7 +72,8 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Predator.h">
-=======
+	<Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="MiniMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -85,7 +84,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Missile.h">
->>>>>>> c05dba99402c413cabc80f6779ce50f6c585d61f
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

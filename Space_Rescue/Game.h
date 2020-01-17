@@ -22,7 +22,7 @@ class Sweeper;
 class MiniMap;
 class PowerUp;
 
-//
+// Game Class Object
 class Game
 {
 public:

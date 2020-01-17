@@ -13,7 +13,8 @@
 
 #include "Tile.h"
 #include <list>
-//
+
+// TileMap Class Object
 class TileMap
 {
 public:
@@ -32,6 +33,8 @@ public:
 
 	void setValues();
 	sf::Vector2f getTile(int i, int j);
+	Tile* getTiles(int i, int j);
+
 private:
 	void initialise();
 
@@ -57,6 +60,7 @@ private:
 	sf::Vector2i m_keyPointStorage[9];
 	sf::Vector2i m_keyPointIndexs[3][3];
 
+	// Game World/Map layout
 	int m_map[30][30] = {
 	{ 9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9, } ,
 	{ 9,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  9, } ,

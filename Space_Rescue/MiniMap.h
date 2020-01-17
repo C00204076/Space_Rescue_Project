@@ -20,7 +20,7 @@
 #include "Player.h"
 #include "Power-up.h"
 
-//
+// Minimap Class Object
 class MiniMap
 {
 public:
