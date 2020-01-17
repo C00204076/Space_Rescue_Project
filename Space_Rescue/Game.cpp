@@ -34,17 +34,35 @@ Game::~Game()
 /// </summary>
 void Game::initialise()
 {
+	//
 	m_playerView.setCenter(m_window.getSize().x / 2, m_window.getSize().y);
 	m_playerView.setSize(1500, 900);
 	m_playerView.zoom(1.0f);
+	//
+	m_miniMapView.reset(sf::FloatRect(0, 0, m_window.getSize().x / 2, m_window.getSize().y / 2));
+	m_miniMapView.setViewport(sf::FloatRect(1.2f - (1.0f * m_miniMapView.getSize().x) / m_window.getSize().x - 0.04f, // RectLeft
+											0.3f - (1.0f * m_miniMapView.getSize().y) / m_window.getSize().y - 0.02f, // RectTop
+											(1.0f * m_miniMapView.getSize().x) / m_window.getSize().x, // RectWidth
+											(1.0f * m_miniMapView.getSize().y) / m_window.getSize().y)); // RectHeight
+	m_miniMapView.zoom(25.0f);
 
-	m_tileMap = new TileMap((float)50.0f);
+	m_tileMap = new TileMap((float)30.0f);
+	m_miniTile = new TileMap((float)30.0f);
 
 	m_player = new Player();
 
 	m_predator = new Predator();
 
 	m_worker = new Worker();
+
+	m_miniPlayer = new Player();
+
+	m_powerUp = new PowerUp();
+	m_miniPower = new PowerUp();
+
+	m_miniMap = new MiniMap(m_miniTile, m_miniPlayer, m_miniPower);
+
+	m_collision = Collisions();
 }
 
 /// <summary>
@@ -68,6 +86,7 @@ void Game::run()
 		}
 
 		render();
+		//clean();
 	}
 }
 
@@ -156,15 +175,22 @@ void Game::update(sf::Time deltaTime)
 	{
 		m_window.close();
 	}
-
+	//
+	m_miniMap->update(deltaTime, m_window, m_miniMapView);
+	//
 	m_tileMap->update(deltaTime, m_window);
-
+	//
 	m_player->update(deltaTime, m_playerView);
 
 	m_predator->update(deltaTime, m_player->getPosition(),m_player->getVelocity());
 	m_predator->detection(m_player->getPosition());
 
 	m_worker->update(deltaTime);
+	//
+	m_powerUp->update(deltaTime);
+	m_miniPower->setPosition(m_powerUp->getPosition());
+	//
+	m_collision.update(m_player, m_tileMap, m_powerUp, m_player->getMissile());
 }
 
 /// <summary>
@@ -173,15 +199,26 @@ void Game::update(sf::Time deltaTime)
 void Game::render()
 {
 	m_window.clear(sf::Color::Black); //Set background to black
-
+	//
 	m_tileMap->render(m_window);
-
+	//
 	m_player->render(m_window);
 
 	m_predator->render(m_window);
 
 	m_worker->render(m_window);
 
+	//
+	m_powerUp->render(m_window);
+	//
+	m_miniMap->render(m_window, m_miniMapView);
+	//
 	m_window.setView(m_playerView);
 	m_window.display();
+}
+
+//
+void Game::clean()
+{
+	m_tileMap->~TileMap();
 }

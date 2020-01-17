@@ -15,6 +15,8 @@
 
 #include "SFML/Graphics.hpp"
 
+class Missile;
+
 class Player
 {
 public:
@@ -23,6 +25,7 @@ public:
 
 	void update(sf::Time deltaTime, sf::View& v);
 	void render(sf::RenderWindow& window);
+	void render(sf::RenderWindow& window, sf::Vector2f scale);
 
 	sf::Vector2f getPosition();
 	void setPosition(sf::Vector2f position);
@@ -31,13 +34,38 @@ public:
 
 	sf::Vector2f getVelocity();
 
+	bool getImmune();
+	void setImmune(bool immune);
+
+	bool getSpeed();
+	void setSpeed(bool speed);
+
+	bool getCollide();
+	void setCollide(bool collide);
+
+	bool getHit();
+	void setHit(bool hit);
+
+	int getHP();
+	void setHP(int hp);
+
+	void setFireDelay(int fireDelay);
+
+	Missile* getMissile();
+
 private:
 	void initalise();
 	void loadTexture();
 
 	void move();
 	
+	void powerup();
+	void iFrames();
+	
 
+	void fire();
+
+	void collision();
 
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;
@@ -46,7 +74,14 @@ private:
 	sf::Vertex m_center;
 	sf::CircleShape m_circle;
 
-	float m_maxSpeed;
+	float m_maxSpeed, m_addedSpeed;
+	int m_hp, m_iFrameTime, m_animateTime, m_fireDelay;
+
+	bool m_immune, m_speed, m_hit, m_collide;
+
+	Missile* m_bullet;
 };
+
+#include "Missile.h"
 
 #endif // !PLAYER_H

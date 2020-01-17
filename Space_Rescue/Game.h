@@ -12,11 +12,15 @@
 #define GAME_H
 
 #include <SFML/Graphics.hpp>
+#include "Collisions.h"
 
 class TileMap;
 class Player;
 class Predator;
 class Worker;
+class MiniMap;
+class PowerUp;
+
 //
 class Game
 {
@@ -33,23 +37,37 @@ private:
 	void processInput();
 	void update(sf::Time deltaTime);
 	void render();
+	void clean();
 
-	sf::View m_playerView, m_miniMap;
+	sf::View m_playerView, m_miniMapView;
 
 	sf::RenderWindow m_window;
 	bool is_running;
 
 	TileMap* m_tileMap;
+	TileMap* m_miniTile;
 
 	Player* m_player;
 
 	Predator* m_predator;
 
 	Worker* m_worker;
+
+	Player* m_miniPlayer;
+
+	PowerUp* m_powerUp;
+	PowerUp* m_miniPower;
+
+	MiniMap* m_miniMap;
+
+	Collisions m_collision;
 };
 
 #include "TileMap.h"
 #include "Player.h"
 #include "Predator.h"
 #include "Worker.h"
+#include "MiniMap.h"
+#include "Power-up.h"
+
 #endif // !GAME_H

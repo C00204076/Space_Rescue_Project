@@ -136,20 +136,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Collisions.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MiniMap.cpp" />
+    <ClCompile Include="Missile.cpp" />
     <ClCompile Include="Player.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="Predator.cpp" />
     <ClCompile Include="Sweeper.cpp" />
+=======
+    <ClCompile Include="Power-up.cpp" />
+>>>>>>> c05dba99402c413cabc80f6779ce50f6c585d61f
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="TileMap.cpp" />
     <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Collisions.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="MiniMap.h" />
+    <ClInclude Include="Missile.h" />
     <ClInclude Include="Player.h" />
+<<<<<<< HEAD
     <ClInclude Include="Predator.h" />
     <ClInclude Include="Sweeper.h" />
+=======
+    <ClInclude Include="Power-up.h" />
+>>>>>>> c05dba99402c413cabc80f6779ce50f6c585d61f
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileMap.h" />
     <ClInclude Include="Worker.h" />
