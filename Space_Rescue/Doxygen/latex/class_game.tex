@@ -1,0 +1,186 @@
+\hypertarget{class_game}{}\doxysection{Game Class Reference}
+\label{class_game}\index{Game@{Game}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_game}{Game}}\textquotesingle{}s default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\+Game}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_game}{Game}}\textquotesingle{}s default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}{run}} ()
+\begin{DoxyCompactList}\small\item\em Method used to call and run the game\textquotesingle{}s update and renders function within a certain frame rate \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_afb6559392bc745814d96e48a60238657}{initialise}} ()
+\begin{DoxyCompactList}\small\item\em Initialisator of default starting values of \mbox{\hyperlink{class_game}{Game}}\textquotesingle{}s main variables \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a79f698dda206dd7a9bed28b3f88bdc38}{process\+Events}} ()
+\begin{DoxyCompactList}\small\item\em Method using in processing the game\textquotesingle{}s main events \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_aed3524ad705934f38b2b1d3e7268b81e}{process\+Game\+Events}} (sf\+::\+Event \&)
+\item 
+void \mbox{\hyperlink{class_game_a815a3ec2787b4b1c4077d28165c380e8}{process\+Input}} ()
+\item 
+void \mbox{\hyperlink{class_game_adf9bc3ef62086a88b8711d57ae8efb09}{update}} (sf\+::\+Time delta\+Time)
+\begin{DoxyCompactList}\small\item\em Method used in calling the update functions of all game Objects used within the game \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a15ddd769261d923827a3cdf41499c843}{render}} ()
+\begin{DoxyCompactList}\small\item\em Method used to render and draw the textures and sprites of all the game\textquotesingle{}s Objects \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_ad4f36a72a2d06696f7973788606f57fc}\label{class_game_ad4f36a72a2d06696f7973788606f57fc}} 
+void {\bfseries clean} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_a3a8acf9cc18d51850ccbe177ed46a412}\label{class_game_a3a8acf9cc18d51850ccbe177ed46a412}} 
+sf\+::\+View {\bfseries m\+\_\+player\+View}
+\item 
+\mbox{\Hypertarget{class_game_a39dda5c191e5e7cf7263526c0e3f690b}\label{class_game_a39dda5c191e5e7cf7263526c0e3f690b}} 
+sf\+::\+View {\bfseries m\+\_\+mini\+Map\+View}
+\item 
+\mbox{\Hypertarget{class_game_a22a61b5ea27c609be8cf2724c33d7ae5}\label{class_game_a22a61b5ea27c609be8cf2724c33d7ae5}} 
+sf\+::\+Render\+Window {\bfseries m\+\_\+window}
+\item 
+\mbox{\Hypertarget{class_game_a0d2cbb9521c4aa8fd02ba55e8d0b2e7d}\label{class_game_a0d2cbb9521c4aa8fd02ba55e8d0b2e7d}} 
+bool {\bfseries is\+\_\+running}
+\item 
+\mbox{\Hypertarget{class_game_a9dfb741a8aed4dece42ec1392e88cc78}\label{class_game_a9dfb741a8aed4dece42ec1392e88cc78}} 
+\mbox{\hyperlink{class_tile_map}{Tile\+Map}} $\ast$ {\bfseries m\+\_\+tile\+Map}
+\item 
+\mbox{\Hypertarget{class_game_aa7a6799c324a0934cbdd618722b7c535}\label{class_game_aa7a6799c324a0934cbdd618722b7c535}} 
+\mbox{\hyperlink{class_tile_map}{Tile\+Map}} $\ast$ {\bfseries m\+\_\+mini\+Tile}
+\item 
+\mbox{\Hypertarget{class_game_a371bdca8d00e1837a11a06e59fa9f44a}\label{class_game_a371bdca8d00e1837a11a06e59fa9f44a}} 
+\mbox{\hyperlink{class_player}{Player}} $\ast$ {\bfseries m\+\_\+player}
+\item 
+\mbox{\Hypertarget{class_game_ac4dd416633ffdde44e4c7c642dafecd4}\label{class_game_ac4dd416633ffdde44e4c7c642dafecd4}} 
+\mbox{\hyperlink{class_predator}{Predator}} $\ast$ {\bfseries m\+\_\+predator}
+\item 
+\mbox{\Hypertarget{class_game_a1d611d97d1e9fe95970dc2e1e0f45a47}\label{class_game_a1d611d97d1e9fe95970dc2e1e0f45a47}} 
+\mbox{\hyperlink{class_worker}{Worker}} $\ast$ {\bfseries m\+\_\+worker}
+\item 
+\mbox{\Hypertarget{class_game_a20d93db98ba7d12b36c414736b39571a}\label{class_game_a20d93db98ba7d12b36c414736b39571a}} 
+\mbox{\hyperlink{class_player}{Player}} $\ast$ {\bfseries m\+\_\+mini\+Player}
+\item 
+\mbox{\Hypertarget{class_game_a1e5c2e4129f32f0107afe155799c2455}\label{class_game_a1e5c2e4129f32f0107afe155799c2455}} 
+\mbox{\hyperlink{class_power_up}{Power\+Up}} $\ast$ {\bfseries m\+\_\+power\+Up}
+\item 
+\mbox{\Hypertarget{class_game_a2730be7cec98d5b2466940eacfc9d96a}\label{class_game_a2730be7cec98d5b2466940eacfc9d96a}} 
+\mbox{\hyperlink{class_power_up}{Power\+Up}} $\ast$ {\bfseries m\+\_\+mini\+Power}
+\item 
+\mbox{\Hypertarget{class_game_a98623b3bcd365974e609fa003c6f13d5}\label{class_game_a98623b3bcd365974e609fa003c6f13d5}} 
+\mbox{\hyperlink{class_mini_map}{Mini\+Map}} $\ast$ {\bfseries m\+\_\+mini\+Map}
+\item 
+\mbox{\Hypertarget{class_game_a03c810793327e18c0c3c3ab7ced3f2d0}\label{class_game_a03c810793327e18c0c3c3ab7ced3f2d0}} 
+\mbox{\hyperlink{class_collisions}{Collisions}} {\bfseries m\+\_\+collision}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_ad59df6562a58a614fda24622d3715b65}\label{class_game_ad59df6562a58a614fda24622d3715b65}} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_game}{Game}}\textquotesingle{}s default constructor 
+
+\mbox{\Hypertarget{class_game_ae3d112ca6e0e55150d2fdbc704474530}\label{class_game_ae3d112ca6e0e55150d2fdbc704474530}} 
+\index{Game@{Game}!````~Game@{$\sim$Game}}
+\index{````~Game@{$\sim$Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{$\sim$Game()}{~Game()}}
+{\footnotesize\ttfamily Game\+::$\sim$\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_game}{Game}}\textquotesingle{}s default destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_afb6559392bc745814d96e48a60238657}\label{class_game_afb6559392bc745814d96e48a60238657}} 
+\index{Game@{Game}!initialise@{initialise}}
+\index{initialise@{initialise}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{initialise()}{initialise()}}
+{\footnotesize\ttfamily void Game\+::initialise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialisator of default starting values of \mbox{\hyperlink{class_game}{Game}}\textquotesingle{}s main variables 
+
+\mbox{\Hypertarget{class_game_a79f698dda206dd7a9bed28b3f88bdc38}\label{class_game_a79f698dda206dd7a9bed28b3f88bdc38}} 
+\index{Game@{Game}!processEvents@{processEvents}}
+\index{processEvents@{processEvents}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{processEvents()}{processEvents()}}
+{\footnotesize\ttfamily void Game\+::process\+Events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Method using in processing the game\textquotesingle{}s main events 
+
+\mbox{\Hypertarget{class_game_aed3524ad705934f38b2b1d3e7268b81e}\label{class_game_aed3524ad705934f38b2b1d3e7268b81e}} 
+\index{Game@{Game}!processGameEvents@{processGameEvents}}
+\index{processGameEvents@{processGameEvents}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{processGameEvents()}{processGameEvents()}}
+{\footnotesize\ttfamily void Game\+::process\+Game\+Events (\begin{DoxyParamCaption}\item[{sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game_a815a3ec2787b4b1c4077d28165c380e8}\label{class_game_a815a3ec2787b4b1c4077d28165c380e8}} 
+\index{Game@{Game}!processInput@{processInput}}
+\index{processInput@{processInput}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{processInput()}{processInput()}}
+{\footnotesize\ttfamily void Game\+::process\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+
+
+\mbox{\Hypertarget{class_game_a15ddd769261d923827a3cdf41499c843}\label{class_game_a15ddd769261d923827a3cdf41499c843}} 
+\index{Game@{Game}!render@{render}}
+\index{render@{render}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Game\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Method used to render and draw the textures and sprites of all the game\textquotesingle{}s Objects 
+
+\mbox{\Hypertarget{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}\label{class_game_a1ab78f5ed0d5ea879157357cf2fb2afa}} 
+\index{Game@{Game}!run@{run}}
+\index{run@{run}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Game\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method used to call and run the game\textquotesingle{}s update and renders function within a certain frame rate 
+
+\mbox{\Hypertarget{class_game_adf9bc3ef62086a88b8711d57ae8efb09}\label{class_game_adf9bc3ef62086a88b8711d57ae8efb09}} 
+\index{Game@{Game}!update@{update}}
+\index{update@{update}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Game\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Method used in calling the update functions of all game Objects used within the game 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game.\+h\item 
+Game.\+cpp\end{DoxyCompactItemize}

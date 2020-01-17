@@ -1,0 +1,150 @@
+\hypertarget{class_tile_map}{}\doxysection{Tile\+Map Class Reference}
+\label{class_tile_map}\index{TileMap@{TileMap}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tile_map_a935d14875d80d2755c6de7cc4288d61c}{Tile\+Map}} (float grid\+Size)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_tile_map}{Tile\+Map}} default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_tile_map_a3448728e45d6a43fff3a02d4c6d72e9d}{$\sim$\+Tile\+Map}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_tile_map}{Tile\+Map}} default destructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_map_a0663ce38604fd490e7fe8ec005419f9f}{update}} (sf\+::\+Time delta\+Time, sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Method used to update the functions and variables of the \mbox{\hyperlink{class_tile_map}{Tile\+Map}} Object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_map_abb157a43219c6478b32d200bd5970908}{render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Method used to render and draw the \mbox{\hyperlink{class_tile}{Tile}} Objects of the \mbox{\hyperlink{class_tile_map}{Tile\+Map}} Object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_map_a6831200e69c57f90b6e01f2f2dd5711e}{render}} (sf\+::\+Render\+Window \&window, sf\+::\+Vector2f scale)
+\begin{DoxyCompactList}\small\item\em Method used to render and draw the \mbox{\hyperlink{class_tile}{Tile}} Objects of the \mbox{\hyperlink{class_tile_map}{Tile\+Map}} Object; and scale it within the \mbox{\hyperlink{class_mini_map}{Mini\+Map}} Object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_tile_map_a6afc9a1011490d1071aa7de628784876}\label{class_tile_map_a6afc9a1011490d1071aa7de628784876}} 
+void {\bfseries set\+Values} ()
+\item 
+\mbox{\hyperlink{class_tile}{Tile}} $\ast$ \mbox{\hyperlink{class_tile_map_abae81b536211a2a7fbbf5c25b4f2f414}{get\+Tiles}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Method used to return the and access the values of a \mbox{\hyperlink{class_tile}{Tile}} Object within the m\+\_\+tiles array using the given arguements \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_tile_map_a7e11c4f37fafa2155db3fecb4326e323}{initialise}} ()
+\begin{DoxyCompactList}\small\item\em Initialisor used in initialising the \mbox{\hyperlink{class_tile}{Tile}} Objects within the \mbox{\hyperlink{class_tile_map}{Tile\+Map}} Object, and set their m\+\_\+type values \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_tile_map_abc12e0d8dbdcd97ab693d23dda7884b9}\label{class_tile_map_abc12e0d8dbdcd97ab693d23dda7884b9}} 
+float {\bfseries m\+\_\+max\+Size}
+\item 
+\mbox{\Hypertarget{class_tile_map_a498f341285ca79ae42cfd79a26718d1c}\label{class_tile_map_a498f341285ca79ae42cfd79a26718d1c}} 
+\mbox{\hyperlink{class_tile}{Tile}} $\ast$ {\bfseries m\+\_\+tiles} \mbox{[}30\mbox{]}\mbox{[}30\mbox{]}
+\item 
+\mbox{\Hypertarget{class_tile_map_aae4082c4bcf37fd1b8d5f21494b674f7}\label{class_tile_map_aae4082c4bcf37fd1b8d5f21494b674f7}} 
+int {\bfseries m\+\_\+map} \mbox{[}30\mbox{]}\mbox{[}30\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_tile_map_a935d14875d80d2755c6de7cc4288d61c}\label{class_tile_map_a935d14875d80d2755c6de7cc4288d61c}} 
+\index{TileMap@{TileMap}!TileMap@{TileMap}}
+\index{TileMap@{TileMap}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{TileMap()}{TileMap()}}
+{\footnotesize\ttfamily Tile\+Map\+::\+Tile\+Map (\begin{DoxyParamCaption}\item[{float}]{grid\+Size }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_tile_map}{Tile\+Map}} default constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid\+Size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_tile_map_a3448728e45d6a43fff3a02d4c6d72e9d}\label{class_tile_map_a3448728e45d6a43fff3a02d4c6d72e9d}} 
+\index{TileMap@{TileMap}!````~TileMap@{$\sim$TileMap}}
+\index{````~TileMap@{$\sim$TileMap}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{$\sim$TileMap()}{~TileMap()}}
+{\footnotesize\ttfamily Tile\+Map\+::$\sim$\+Tile\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_tile_map}{Tile\+Map}} default destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tile_map_abae81b536211a2a7fbbf5c25b4f2f414}\label{class_tile_map_abae81b536211a2a7fbbf5c25b4f2f414}} 
+\index{TileMap@{TileMap}!getTiles@{getTiles}}
+\index{getTiles@{getTiles}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{getTiles()}{getTiles()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tile}{Tile}} $\ast$ Tile\+Map\+::get\+Tiles (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Method used to return the and access the values of a \mbox{\hyperlink{class_tile}{Tile}} Object within the m\+\_\+tiles array using the given arguements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & \\
+\hline
+{\em j} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_tile_map_a7e11c4f37fafa2155db3fecb4326e323}\label{class_tile_map_a7e11c4f37fafa2155db3fecb4326e323}} 
+\index{TileMap@{TileMap}!initialise@{initialise}}
+\index{initialise@{initialise}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{initialise()}{initialise()}}
+{\footnotesize\ttfamily void Tile\+Map\+::initialise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialisor used in initialising the \mbox{\hyperlink{class_tile}{Tile}} Objects within the \mbox{\hyperlink{class_tile_map}{Tile\+Map}} Object, and set their m\+\_\+type values 
+
+\mbox{\Hypertarget{class_tile_map_abb157a43219c6478b32d200bd5970908}\label{class_tile_map_abb157a43219c6478b32d200bd5970908}} 
+\index{TileMap@{TileMap}!render@{render}}
+\index{render@{render}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Tile\+Map\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Method used to render and draw the \mbox{\hyperlink{class_tile}{Tile}} Objects of the \mbox{\hyperlink{class_tile_map}{Tile\+Map}} Object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_tile_map_a6831200e69c57f90b6e01f2f2dd5711e}\label{class_tile_map_a6831200e69c57f90b6e01f2f2dd5711e}} 
+\index{TileMap@{TileMap}!render@{render}}
+\index{render@{render}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Tile\+Map\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{sf\+::\+Vector2f}]{scale }\end{DoxyParamCaption})}
+
+
+
+Method used to render and draw the \mbox{\hyperlink{class_tile}{Tile}} Objects of the \mbox{\hyperlink{class_tile_map}{Tile\+Map}} Object; and scale it within the \mbox{\hyperlink{class_mini_map}{Mini\+Map}} Object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+{\em scale} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_tile_map_a0663ce38604fd490e7fe8ec005419f9f}\label{class_tile_map_a0663ce38604fd490e7fe8ec005419f9f}} 
+\index{TileMap@{TileMap}!update@{update}}
+\index{update@{update}!TileMap@{TileMap}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Tile\+Map\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time,  }\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Method used to update the functions and variables of the \mbox{\hyperlink{class_tile_map}{Tile\+Map}} Object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tile\+Map.\+h\item 
+Tile\+Map.\+cpp\end{DoxyCompactItemize}

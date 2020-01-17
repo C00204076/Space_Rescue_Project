@@ -10,7 +10,11 @@
 
 #include "Missile.h"
 
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="isPlayer"></param>
+/// <param name="isNest"></param>
 Missile::Missile(bool isPlayer, bool isNest) :
 	m_isPlayer(isPlayer),
 	m_isNest(isNest)
@@ -18,12 +22,17 @@ Missile::Missile(bool isPlayer, bool isNest) :
 	initialise();
 }
 
+/// <summary>
+/// 
+/// </summary>
 Missile::~Missile()
 {
 	//delete this;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 void Missile::initialise()
 {
 	loadTexture();
@@ -50,6 +59,9 @@ void Missile::initialise()
 	m_active = false;
 }
 
+/// <summary>
+/// 
+/// </summary>
 void Missile::loadTexture()
 {
 	//
@@ -65,7 +77,10 @@ void Missile::loadTexture()
 	}
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="deltaTime"></param>
 void Missile::update(sf::Time deltaTime)
 {
 	//
@@ -85,7 +100,10 @@ void Missile::update(sf::Time deltaTime)
 	}
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="window"></param>
 void Missile::render(sf::RenderWindow& window)
 {
 	//
@@ -95,7 +113,10 @@ void Missile::render(sf::RenderWindow& window)
 	}
 }
 
-// Set rotation of Missile, when it is fired from the Player
+/// <summary>
+/// Set rotation of Missile, when it is fired from the Player
+/// <summary>
+/// <param name="player"></param>
 void Missile::setRotation(Player* player)
 {
 	if (m_active == false)
@@ -104,7 +125,10 @@ void Missile::setRotation(Player* player)
 	}
 }
 
-// Set rotation of Missile, when it is fired at the Player
+/// <summary>
+/// Set rotation of Missile, when it is fired at the Player
+/// <summary>
+/// <param name="player"></param>
 void Missile::setMissileRotation(Player* player)
 {
 	if (m_active == false)
@@ -134,55 +158,83 @@ void Missile::setMissileRotation(Player* player)
 }
 
 
-//
+/// <summary>
+/// 
+/// </summary>
 sf::Vector2f Missile::getPosition()
 {
 	return m_position;
 }
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="position"></param>
 void Missile::setPosition(sf::Vector2f position)
 {
 	m_position = position;
 	m_sprite.setPosition(position);
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 sf::Sprite Missile::getSprite()
 {
 	return m_sprite;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="isPlayer"></param>
 void Missile::setIsPlayer(bool isPlayer)
 {
 	m_isPlayer = isPlayer;
 }
+/// <summary>
+/// 
+/// </summary>
 bool Missile::getIsPlayer()
 {
 	return m_isPlayer;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="isNest"></param>
 void Missile::setIsNest(bool isNest)
 {
 	m_isNest = isNest;
 }
+/// <summary>
+/// 
+/// </summary>
 bool Missile::getIsNest()
 {
 	return m_isNest;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="active"></param>
 void Missile::setActive(bool active)
 {
 	m_active = active;
 }
+/// <summary>
+/// 
+/// </summary>
 bool Missile::getActive()
 {
 	return m_active;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="lifeTime"></param>
 void Missile::setLifeTime(int lifeTime)
 {
 	m_lifeTime = lifeTime;

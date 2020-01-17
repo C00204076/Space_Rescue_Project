@@ -21,7 +21,7 @@ class Worker;
 class MiniMap;
 class PowerUp;
 
-//
+// Game Class Object
 class Game
 {
 public:

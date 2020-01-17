@@ -12,10 +12,12 @@
 #define POWERUP_H
 
 #include <iostream>
+#include <cstdlib>
 
 #include "SFML/Graphics.hpp"
+#include "TileMap.h"
 
-//
+// PowerUp Class Object
 class PowerUp
 {
 public:
@@ -23,6 +25,7 @@ public:
 	~PowerUp();
 
 	void update(sf::Time deltaTime);
+	void update(sf::Time deltaTime, TileMap* tilemap);
 	void render(sf::RenderWindow& window);
 	void render(sf::RenderWindow& window, sf::Vector2f scale);
 
@@ -43,7 +46,7 @@ private:
 	void initialise();
 	void loadTexture();
 
-	void spawnPowerUp();
+	void spawnPowerUp(TileMap* tilemap);
 	void powerUpLifeTime();
 	void animatePowerUp();
 
@@ -53,6 +56,7 @@ private:
 
 	int m_type;
 	int m_activeTime, m_animaTime, m_respawnTime; 
+	int m_randX, m_randY;
 
 	bool m_active, m_collide;
 };

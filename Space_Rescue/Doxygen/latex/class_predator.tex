@@ -1,0 +1,80 @@
+\hypertarget{class_predator}{}\doxysection{Predator Class Reference}
+\label{class_predator}\index{Predator@{Predator}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_predator_a558a168e4d2a9de5b8518f6239919705}\label{class_predator_a558a168e4d2a9de5b8518f6239919705}} 
+void {\bfseries update} (sf\+::\+Time delta\+Time, sf\+::\+Vector2f t\+\_\+player\+Pos, sf\+::\+Vector2f t\+\_\+player\+Vel)
+\item 
+\mbox{\Hypertarget{class_predator_ac93d9e96b82e31038bc8070e97cbb8ee}\label{class_predator_ac93d9e96b82e31038bc8070e97cbb8ee}} 
+void {\bfseries detection} (sf\+::\+Vector2f t\+\_\+player\+Pos)
+\item 
+\mbox{\Hypertarget{class_predator_a022f393013e0c2d61756a494644a5714}\label{class_predator_a022f393013e0c2d61756a494644a5714}} 
+void {\bfseries pursue} (sf\+::\+Vector2f t\+\_\+player\+Pos, sf\+::\+Vector2f t\+\_\+player\+Unit\+Vel)
+\item 
+\mbox{\Hypertarget{class_predator_ab93d85fc606e4c770312affde9712f16}\label{class_predator_ab93d85fc606e4c770312affde9712f16}} 
+void {\bfseries movement} ()
+\item 
+\mbox{\Hypertarget{class_predator_acf84bdda5a2ad7120ae182fbeac59516}\label{class_predator_acf84bdda5a2ad7120ae182fbeac59516}} 
+void {\bfseries render} (sf\+::\+Render\+Window \&window)
+\item 
+\mbox{\Hypertarget{class_predator_ac2f663bc0e6ad1ab4fa6fa1468e7e2a5}\label{class_predator_ac2f663bc0e6ad1ab4fa6fa1468e7e2a5}} 
+float {\bfseries steer} ()
+\item 
+\mbox{\Hypertarget{class_predator_a0e8aab4a2524d64969839741711b1319}\label{class_predator_a0e8aab4a2524d64969839741711b1319}} 
+float {\bfseries distance} ()
+\item 
+\mbox{\Hypertarget{class_predator_a98af15bf32a7cbb515f2410b7785c38e}\label{class_predator_a98af15bf32a7cbb515f2410b7785c38e}} 
+float {\bfseries angle} (sf\+::\+Vector2f t\+\_\+position, sf\+::\+Vector2f t\+\_\+target\+Position)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_predator_ad36bcff5ee73d73616c6fa14f012e906}\label{class_predator_ad36bcff5ee73d73616c6fa14f012e906}} 
+sf\+::\+Circle\+Shape {\bfseries m\+\_\+body}
+\item 
+\mbox{\Hypertarget{class_predator_ab9afb0026b153aafcc09ab9464abc02e}\label{class_predator_ab9afb0026b153aafcc09ab9464abc02e}} 
+sf\+::\+Circle\+Shape {\bfseries m\+\_\+cone\+Of\+Vision}
+\item 
+\mbox{\Hypertarget{class_predator_a6562616a908b2d5cd6c918fdf247f204}\label{class_predator_a6562616a908b2d5cd6c918fdf247f204}} 
+float {\bfseries m\+\_\+cone\+Of\+Vision\+Length}
+\item 
+\mbox{\Hypertarget{class_predator_a4deb73fda472b8a03744cfbc8c06faed}\label{class_predator_a4deb73fda472b8a03744cfbc8c06faed}} 
+float {\bfseries m\+\_\+angles} \mbox{[}6\mbox{]}
+\item 
+\mbox{\Hypertarget{class_predator_acdb5940a906c142266e0050c373ea0a3}\label{class_predator_acdb5940a906c142266e0050c373ea0a3}} 
+float {\bfseries m\+\_\+angle\+To\+Target}
+\item 
+\mbox{\Hypertarget{class_predator_a299d3a779921b4835a6fed06fa090561}\label{class_predator_a299d3a779921b4835a6fed06fa090561}} 
+float {\bfseries m\+\_\+speed}
+\item 
+\mbox{\Hypertarget{class_predator_a335088a84dbe6f30cc45a7b7c0d7cbb6}\label{class_predator_a335088a84dbe6f30cc45a7b7c0d7cbb6}} 
+float {\bfseries m\+\_\+base\+Speed}
+\item 
+\mbox{\Hypertarget{class_predator_a520aac6a325a7061fbe2338b1d004708}\label{class_predator_a520aac6a325a7061fbe2338b1d004708}} 
+float {\bfseries m\+\_\+current\+Angle}
+\item 
+\mbox{\Hypertarget{class_predator_acc908cc168cdc7fc07c931821961e269}\label{class_predator_acc908cc168cdc7fc07c931821961e269}} 
+bool {\bfseries m\+\_\+detect}
+\item 
+\mbox{\Hypertarget{class_predator_af1ded6bfc9677b5b130f44011492c7c7}\label{class_predator_af1ded6bfc9677b5b130f44011492c7c7}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+detection\+Points} \mbox{[}6\mbox{]}
+\item 
+\mbox{\Hypertarget{class_predator_ae5a0a1ef37e321f318f14f8bcfb85eb1}\label{class_predator_ae5a0a1ef37e321f318f14f8bcfb85eb1}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+position}
+\item 
+\mbox{\Hypertarget{class_predator_a3b1b0b45769a57acf64ed49f88b06be0}\label{class_predator_a3b1b0b45769a57acf64ed49f88b06be0}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+target\+Position}
+\item 
+\mbox{\Hypertarget{class_predator_a2eb1a4b816c548644e26aa84933fb33b}\label{class_predator_a2eb1a4b816c548644e26aa84933fb33b}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+velocity}
+\item 
+\mbox{\Hypertarget{class_predator_a4fdfbb59acc5544a2ae27d4d6b70728e}\label{class_predator_a4fdfbb59acc5544a2ae27d4d6b70728e}} 
+sf\+::\+Vertex {\bfseries m\+\_\+points} \mbox{[}6\mbox{]}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Predator.\+h\item 
+Predator.\+cpp\end{DoxyCompactItemize}
