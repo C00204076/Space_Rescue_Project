@@ -34,9 +34,11 @@ void Player::initalise()
 	m_hp = 3;
 	m_iFrameTime = 0;
 	m_animateTime = 0;
-	m_maxSpeed = 12;
+	m_maxSpeed = 8;
 	m_addedSpeed = 0.0f;
 	m_fireDelay = 0;
+	m_powerupTime = 0;
+	m_powerupAnimate = 0;
 	m_position = sf::Vector2f(500, 400);
 	//
 	m_sprite.setTexture(m_texture);
@@ -116,6 +118,7 @@ void Player::powerup()
 	{
 		m_sprite.setColor(sf::Color::Yellow);
 		m_addedSpeed = 0.3f;
+		m_powerupTime++;
 	}
 	//
 	else if (m_speed == false)
@@ -128,10 +131,47 @@ void Player::powerup()
 	if (m_immune == true)
 	{
 		m_sprite.setColor(sf::Color::Red);
+		m_powerupTime++;
 	}
 	else if (m_immune == false)
 	{
 		m_sprite.setColor(sf::Color::White);
+	}
+
+	if (m_powerupTime > 250)
+	{
+		//
+		if (m_powerupAnimate < 5)
+		{
+			//
+			if (m_speed == true)
+			{
+				m_sprite.setColor(sf::Color::Yellow);
+			}
+			//
+			else if (m_immune == true)
+			{
+				m_sprite.setColor(sf::Color::Red);
+			}
+		}
+		//
+		else if (m_powerupAnimate > 5 && m_powerupAnimate < 10)
+		{
+			m_sprite.setColor(sf::Color::Transparent);
+		}
+		//
+		else if (m_powerupAnimate > 10)
+		{
+			m_powerupAnimate = 0;
+		}
+	}
+
+	//
+	if (m_powerupTime >= 320)
+	{
+		m_speed = false;
+		m_immune = false;
+		m_powerupTime = 0;
 	}
 }
 

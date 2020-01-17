@@ -75,7 +75,7 @@ private:
 	sf::CircleShape m_circle;
 
 	float m_maxSpeed, m_addedSpeed;
-	int m_hp, m_iFrameTime, m_animateTime, m_fireDelay;
+	int m_hp, m_iFrameTime, m_animateTime, m_fireDelay, m_powerupTime, m_powerupAnimate;
 
 	bool m_immune, m_speed, m_hit, m_collide;
 
