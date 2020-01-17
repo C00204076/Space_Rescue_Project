@@ -31,15 +31,19 @@ public:
 	void render(sf::RenderWindow& window);
 
 	int getType();
+	int getValue();
+
 	sf::Vector2f getPosition();
 	sf::Vector2f getWorldPosition();
 	sf::RectangleShape getRect();
+	sf::Vector2i getIndex();
+	sf::Vector2i getLowestNeighbour();
+	bool getWall();
 
 	void setColour();
 	void setType(int type);
 	void setValue(int value);
-
-
+	void setLowestNeighbour(sf::Vector2i t_coordinates);
 
 private:
 	void initialise();
@@ -47,6 +51,12 @@ private:
 	sf::Vector2f m_position;
 	int m_type, m_x, m_y;
 	int m_value;
+
+	sf::Vector2i m_index;
+	sf::Vector2i m_lowestNeighbour;
+
+	bool m_wall;
+	bool m_keyPoint;
 };
 
 #endif // !TILE_H

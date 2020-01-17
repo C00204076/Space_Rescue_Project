@@ -1,6 +1,7 @@
 #include "Predator.h"
 
-Predator::Predator()
+Predator::Predator(TileMap* t_map):
+	m_map(t_map)
 {
 	m_position = sf::Vector2f(200, 100.0);
 
@@ -23,6 +24,10 @@ Predator::Predator()
 	m_coneOfVisionLength = sqrt(
 		pow(m_coneOfVision.getPoint(0).x - m_coneOfVision.getPoint(1).x, 2) +
 		pow(m_coneOfVision.getPoint(0).y - m_coneOfVision.getPoint(1).y, 2));
+
+	m_target = sf::Vector2i(-1, -1);
+
+	m_path = m_map->createPath(m_position,m_target);
 }
 
 Predator::~Predator() 
@@ -37,6 +42,10 @@ void Predator::update(sf::Time deltaTime, sf::Vector2f t_playerPos, sf::Vector2f
 	{
 		pursue(t_playerPos, t_playerVel);
 	}
+	else
+	{
+		wander();
+	}
 	movement();
 
 	m_currentAngle = steer();
@@ -48,7 +57,6 @@ void Predator::update(sf::Time deltaTime, sf::Vector2f t_playerPos, sf::Vector2f
 void Predator::movement()
 {
 	m_position += m_velocity;
-	std::cout << m_position.x << " " << m_position.y << std::endl;
 }
 
 void Predator::detection(sf::Vector2f t_playerPos)
@@ -60,6 +68,7 @@ void Predator::detection(sf::Vector2f t_playerPos)
 	{
 		m_detectionPoints[0] = t_playerPos;
 		m_angles[0] = angle(t_playerPos,m_coneOfVision.getPosition()) * (180.0 / (22.0 / 7.0));
+
 		//angle(t_playerPos, m_coneOfVision.getPosition());
 		m_points[0] = m_detectionPoints[0];
 		m_angleToTarget = m_angles[0];
@@ -125,21 +134,57 @@ void Predator::pursue(sf::Vector2f t_playerPos, sf::Vector2f t_playerUnitVel)
 	else if (distance() > 1000)
 	{
 		m_detect = false;
+
+		while (m_path.empty() == false)
+		{
+			m_path.pop_front();
+		}
+		m_path = m_map->createPath(m_position, m_target);
 	}
 	else
 	{
 		m_angleToTarget = angle(m_position, m_targetPosition);
 		//m_eSprite.setRotation(m_angleToTarget * (180.0 / (22.0 / 7.0)));
-		m_coneOfVision.setRotation(m_angleToTarget * (180.0 / (22.0 / 7.0)) - 90);
+		//m_coneOfVision.setRotation(m_angleToTarget * (180.0 / (22.0 / 7.0)) - 90);
 		m_velocity = sf::Vector2f((cosf(m_angleToTarget)) * m_speed, (sinf(m_angleToTarget)) * m_speed);
 	}
 	
 }
 
+void Predator::wander()
+{
+	if (m_path.empty() == false)
+	{
+		m_targetPosition = sf::Vector2f(m_path.back()->getPosition().x + 45, m_path.back()->getPosition().y + 45);
+		m_angleToTarget = angle(m_position, m_targetPosition);
+		std::cout << m_angleToTarget << std::endl;
+		//m_coneOfVision.setRotation(m_angleToTarget * (180.0 / (22.0 / 7.0)) - 90);
+		m_velocity = sf::Vector2f((cosf(m_angleToTarget)) * m_speed, (sinf(m_angleToTarget)) * m_speed);
+
+		if (distance() < 10)
+		{
+			m_path.pop_back();
+		}
+	}
+	else
+	{
+		m_path = m_map->createPath(m_position,m_target);
+	}
+}
+
 float Predator::steer()
 {
 	float m_currentAngleDegree = m_currentAngle * (180.0 / (22.0 / 7.0));
-	float m_angleToTargetDegree = m_angles[0] + 90;
+
+	float m_angleToTargetDegree;
+	if (m_detect == true)
+	{
+		m_angleToTargetDegree = m_angles[0] + 90;
+	}
+	else
+	{
+		m_angleToTargetDegree = m_angleToTarget * (180.0 / (22.0 / 7.0)) - 90;
+	}
 
 	float m_increment = 1;
 	//The below situations are intended to steer the alien towards its target angle. Only works correctly for wander

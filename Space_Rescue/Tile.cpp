@@ -22,7 +22,10 @@ Tile::Tile(int type, int gridX, int gridY) :
 	m_x(gridX),
 	m_y(gridY)
 {
+	m_wall = false;
 	initialise();
+
+	m_index = sf::Vector2i(gridX, gridY);
 }
 
 //
@@ -34,7 +37,7 @@ Tile::~Tile()
 //
 void Tile::initialise()
 {
-	m_value = 1;
+	m_value = 0;
 
 	m_square.setSize(sf::Vector2f(90, 90));
 	setColour();
@@ -79,6 +82,21 @@ sf::RectangleShape Tile::getRect()
 	return m_square;
 }
 
+bool Tile::getWall()
+{
+	return m_wall;
+}
+
+sf::Vector2i Tile::getLowestNeighbour()
+{
+	return m_lowestNeighbour;
+}
+
+sf::Vector2i Tile::getIndex()
+{
+	return m_index;
+}
+
 //
 void Tile::setColour()
 {
@@ -88,10 +106,6 @@ void Tile::setColour()
 		m_type = 0;
 	}
 	//
-	else if (m_type > 9)
-	{
-		m_type = 9;
-	}
 
 	//
 	if (m_type == 0)
@@ -126,6 +140,13 @@ void Tile::setColour()
 	else if (m_type == 9)
 	{
 		m_square.setFillColor(sf::Color(250, 250, 250, 80));
+		m_value = 9999;
+		m_wall = true;
+	}
+	else if (m_type == 10)
+	{
+		m_value = 9999;
+		m_square.setFillColor(sf::Color(250, 250, 250, 125));
 	}
 }
 
@@ -140,4 +161,14 @@ void Tile::setType(int type)
 void Tile::setValue(int value)
 {
 	m_value = value;
+}
+
+int Tile::getValue()
+{
+	return m_value;
+}
+
+void Tile::setLowestNeighbour(sf::Vector2i t_coordinates)
+{
+	m_lowestNeighbour = t_coordinates;
 }

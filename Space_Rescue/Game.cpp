@@ -34,6 +34,7 @@ Game::~Game()
 /// </summary>
 void Game::initialise()
 {
+	srand(NULL);
 	//
 	m_playerView.setCenter(m_window.getSize().x / 2, m_window.getSize().y);
 	m_playerView.setSize(1500, 900);
@@ -51,7 +52,7 @@ void Game::initialise()
 
 	m_player = new Player();
 
-	m_predator = new Predator();
+	m_predator = new Predator(m_tileMap);
 
 	m_worker = new Worker();
 
