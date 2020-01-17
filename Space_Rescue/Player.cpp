@@ -43,6 +43,8 @@ void Player::initalise()
 	m_sprite.setOrigin(25, 25);
 	m_sprite.setPosition(m_position);
 	m_sprite.setRotation(0);
+
+	m_center = m_position;
 	//
 	m_immune = false;
 	m_speed = false;
@@ -218,6 +220,8 @@ void Player::update(sf::Time deltaTime, sf::View &v)
 	m_bullet->update(deltaTime);
 	//
 	v.setCenter(m_position.x, m_position.y);
+
+	m_center = m_position;
 }
 /// <summary>
 /// bullets[i]->~bullet();
@@ -242,6 +246,7 @@ void Player::render(sf::RenderWindow& window, sf::Vector2f scale)
 	m_sprite.setScale(scale);
 	//
 	window.draw(m_sprite);
+	window.draw(&m_center,1,sf::Points);
 }
 
 //

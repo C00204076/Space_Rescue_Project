@@ -71,6 +71,9 @@ private:
 	sf::Texture m_texture;
 	sf::Vector2f m_position, m_velocity;
 
+	sf::Vertex m_center;
+	sf::CircleShape m_circle;
+
 	float m_maxSpeed, m_addedSpeed;
 	int m_hp, m_iFrameTime, m_animateTime, m_fireDelay;
 

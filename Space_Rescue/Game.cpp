@@ -50,6 +50,11 @@ void Game::initialise()
 	m_miniTile = new TileMap((float)30.0f);
 
 	m_player = new Player();
+
+	m_predator = new Predator();
+
+	m_worker = new Worker();
+
 	m_miniPlayer = new Player();
 
 	m_powerUp = new PowerUp();
@@ -176,6 +181,11 @@ void Game::update(sf::Time deltaTime)
 	m_tileMap->update(deltaTime, m_window);
 	//
 	m_player->update(deltaTime, m_playerView);
+
+	m_predator->update(deltaTime, m_player->getPosition(),m_player->getVelocity());
+	m_predator->detection(m_player->getPosition());
+
+	m_worker->update(deltaTime);
 	//
 	m_powerUp->update(deltaTime);
 	m_miniPower->setPosition(m_powerUp->getPosition());
@@ -193,6 +203,11 @@ void Game::render()
 	m_tileMap->render(m_window);
 	//
 	m_player->render(m_window);
+
+	m_predator->render(m_window);
+
+	m_worker->render(m_window);
+
 	//
 	m_powerUp->render(m_window);
 	//

@@ -16,6 +16,8 @@
 
 class TileMap;
 class Player;
+class Predator;
+class Worker;
 class MiniMap;
 class PowerUp;
 
@@ -46,6 +48,11 @@ private:
 	TileMap* m_miniTile;
 
 	Player* m_player;
+
+	Predator* m_predator;
+
+	Worker* m_worker;
+
 	Player* m_miniPlayer;
 
 	PowerUp* m_powerUp;
@@ -58,6 +65,8 @@ private:
 
 #include "TileMap.h"
 #include "Player.h"
+#include "Predator.h"
+#include "Worker.h"
 #include "MiniMap.h"
 #include "Power-up.h"
 
