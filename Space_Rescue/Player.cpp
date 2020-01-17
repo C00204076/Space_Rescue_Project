@@ -116,7 +116,7 @@ void Player::powerup()
 	//
 	if (m_speed == true)
 	{
-		m_sprite.setColor(sf::Color::Yellow);
+		m_sprite.setColor(sf::Color(2, 2, 0, 255));
 		m_addedSpeed = 0.3f;
 		m_powerupTime++;
 	}
@@ -130,7 +130,7 @@ void Player::powerup()
 	//
 	if (m_immune == true)
 	{
-		m_sprite.setColor(sf::Color::Red);
+		m_sprite.setColor(sf::Color(2, 0, 0, 255));
 		m_powerupTime++;
 	}
 	else if (m_immune == false)
@@ -140,18 +140,20 @@ void Player::powerup()
 
 	if (m_powerupTime > 250)
 	{
+		m_powerupAnimate++;
+
 		//
 		if (m_powerupAnimate < 5)
 		{
 			//
 			if (m_speed == true)
 			{
-				m_sprite.setColor(sf::Color::Yellow);
+				m_sprite.setColor(sf::Color(25, 25, 0, 255));
 			}
 			//
 			else if (m_immune == true)
 			{
-				m_sprite.setColor(sf::Color::Red);
+				m_sprite.setColor(sf::Color(25, 0, 0, 255));
 			}
 		}
 		//
