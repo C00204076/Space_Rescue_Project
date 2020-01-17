@@ -1,15 +1,20 @@
 #ifndef SWEEPER
 #define SWEEPER
-#include<SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include <iostream>
+#include "TileMap.h"
+
+class TileMap;
+class Tile;
 class Sweeper
 {
 public:
-	Sweeper();
+	Sweeper(TileMap* t_map);
 	~Sweeper();
 	void update(sf::Time deltaTime, sf::Vector2f t_playerPos, sf::Vector2f t_playerVel);
 	void detection(sf::Vector2f t_playerPos);
 	void pursue(sf::Vector2f t_playerPos, sf::Vector2f t_playerUnitVel);
+	void wander();
 	void movement();
 	void render(sf::RenderWindow& window);
 
@@ -30,12 +35,18 @@ private:
 
 	bool m_detect;
 
+
 	sf::Vector2f m_detectionPoints[6];
 	sf::Vector2f m_position;
 	sf::Vector2f m_targetPosition;
 	sf::Vector2f m_velocity;
 
-	sf::Vertex m_points[6];
-};
+	sf::Vector2i m_target;
 
+	sf::Vertex m_points[6];
+
+	TileMap* m_map;
+	std::list<Tile*> m_path;
+	//Player* m_player;
+};
 #endif

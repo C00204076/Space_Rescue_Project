@@ -1,6 +1,7 @@
 #include "Sweeper.h"
 
-Sweeper::Sweeper()
+Sweeper::Sweeper(TileMap* t_map) :
+	m_map(t_map)
 {
 	m_position = sf::Vector2f(200, 100.0);
 
@@ -10,9 +11,10 @@ Sweeper::Sweeper()
 	m_coneOfVision.setPosition(m_position);
 
 	//m_center = m_coneOfVision.getPosition();
-	m_body.setOrigin(sf::Vector2f(50.0f, 50.0f));
-	m_body.setRadius(50);
+	m_body.setOrigin(sf::Vector2f(30.0f, 30.0f));
+	m_body.setRadius(30);
 	m_body.setPosition(m_position);
+	m_body.setFillColor(sf::Color::Green);
 
 	m_currentAngle = 0;
 
@@ -23,6 +25,10 @@ Sweeper::Sweeper()
 	m_coneOfVisionLength = sqrt(
 		pow(m_coneOfVision.getPoint(0).x - m_coneOfVision.getPoint(1).x, 2) +
 		pow(m_coneOfVision.getPoint(0).y - m_coneOfVision.getPoint(1).y, 2));
+
+	m_target = sf::Vector2i(-1, -1);
+
+	m_path = m_map->createPath(m_position, m_target, true);
 }
 
 Sweeper::~Sweeper()
@@ -37,6 +43,10 @@ void Sweeper::update(sf::Time deltaTime, sf::Vector2f t_playerPos, sf::Vector2f 
 	{
 		pursue(t_playerPos, t_playerVel);
 	}
+	else
+	{
+		wander();
+	}
 	movement();
 
 	m_currentAngle = steer();
@@ -48,18 +58,15 @@ void Sweeper::update(sf::Time deltaTime, sf::Vector2f t_playerPos, sf::Vector2f 
 void Sweeper::movement()
 {
 	m_position += m_velocity;
-	std::cout << m_position.x << " " << m_position.y << std::endl;
 }
 
 void Sweeper::detection(sf::Vector2f t_playerPos)
 {
-	//std::cout << sqrt(pow(m_visionOrigin.x - t_playerPos.x, 2) + pow(m_visionOrigin.y - t_playerPos.y, 2)) << std::endl;
-	//std::cout << sqrt(pow(m_coneOfVision.getPoint(0).x - m_coneOfVision.getPoint(1).x, 2) + pow(m_coneOfVision.getPoint(0).y - m_coneOfVision.getPoint(1).y, 2)) << std::endl;
-	//m_detect = false;
 	if ((sqrt(pow(m_coneOfVision.getPosition().x - t_playerPos.x, 2) + pow(m_coneOfVision.getPosition().y - t_playerPos.y, 2))) - 25 < m_coneOfVisionLength)
 	{
 		m_detectionPoints[0] = t_playerPos;
 		m_angles[0] = angle(t_playerPos, m_coneOfVision.getPosition()) * (180.0 / (22.0 / 7.0));
+
 		//angle(t_playerPos, m_coneOfVision.getPosition());
 		m_points[0] = m_detectionPoints[0];
 		m_angleToTarget = m_angles[0];
@@ -93,11 +100,11 @@ void Sweeper::detection(sf::Vector2f t_playerPos)
 
 		for (int i = 0; i < 6; i++)
 		{
-			if ((m_angles[i] > leftSide && m_angles[i] < rightSide)
+			if ((m_angles[i] > leftSide&& m_angles[i] < rightSide)
 				||
-				(leftSide > 120 && m_angles[i] > 120) && (m_angles[i] > leftSide && m_angles[i] - 360 < rightSide)
+				(leftSide > 120 && m_angles[i] > 120) && (m_angles[i] > leftSide&& m_angles[i] - 360 < rightSide)
 				||
-				(rightSide < -120 && m_angles[i] < -120) && (m_angles[i] + 360 > leftSide && m_angles[i] < rightSide))
+				(rightSide < -120 && m_angles[i] < -120) && (m_angles[i] + 360 > leftSide&& m_angles[i] < rightSide))
 			{
 				m_detect = true;
 			}
@@ -125,15 +132,46 @@ void Sweeper::pursue(sf::Vector2f t_playerPos, sf::Vector2f t_playerUnitVel)
 	else if (distance() > 1000)
 	{
 		m_detect = false;
+
+		if (m_path.empty() == false)
+		{
+			m_path.clear();
+		}
+		m_path = m_map->createPath(m_position, m_target, true);
 	}
 	else
 	{
 		m_angleToTarget = angle(m_position, m_targetPosition);
 		//m_eSprite.setRotation(m_angleToTarget * (180.0 / (22.0 / 7.0)));
-		m_coneOfVision.setRotation(m_angleToTarget * (180.0 / (22.0 / 7.0)) - 90);
+		//m_coneOfVision.setRotation(m_angleToTarget * (180.0 / (22.0 / 7.0)) - 90);
 		m_velocity = sf::Vector2f((cosf(m_angleToTarget)) * m_speed, (sinf(m_angleToTarget)) * m_speed);
 	}
 
+}
+
+void Sweeper::wander()
+{
+	if (m_path.empty() == false)
+	{
+		m_targetPosition = sf::Vector2f(m_path.back()->getPosition().x + 45, m_path.back()->getPosition().y + 45);
+		m_angleToTarget = angle(m_position, m_targetPosition);
+		std::cout << m_angleToTarget << std::endl;
+		//m_coneOfVision.setRotation(m_angleToTarget * (180.0 / (22.0 / 7.0)) - 90);
+		m_velocity = sf::Vector2f((cosf(m_angleToTarget)) * m_speed, (sinf(m_angleToTarget)) * m_speed);
+
+		if (distance() < 5 && m_path.size() != 1)
+		{
+			m_path = m_map->createPath(m_path.back()->getPosition(), m_target, false);
+		}
+		else if (distance() < 10 && m_path.size() == 1)
+		{
+			m_path.clear();
+		}
+	}
+	else
+	{
+		m_path = m_map->createPath(m_position, m_target, true);
+	}
 }
 
 float Sweeper::steer()
@@ -184,9 +222,4 @@ void Sweeper::render(sf::RenderWindow& window)
 {
 	//window.draw(m_rect);
 	window.draw(m_body);
-	window.draw(m_coneOfVision);
-	for (int i = 0; i < 6; i++)
-	{
-		window.draw(&m_points[i], 1, sf::Points);
-	}
 }

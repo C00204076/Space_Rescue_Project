@@ -11,9 +11,10 @@ Predator::Predator(TileMap* t_map):
 	m_coneOfVision.setPosition(m_position);
 	
 	//m_center = m_coneOfVision.getPosition();
-	m_body.setOrigin(sf::Vector2f(50.0f, 50.0f));
-	m_body.setRadius(50);
+	m_body.setOrigin(sf::Vector2f(40.0f, 40.0f));
+	m_body.setRadius(40);
 	m_body.setPosition(m_position);
+	m_body.setFillColor(sf::Color::Red);
 	
 	m_currentAngle = 0;
 
@@ -27,7 +28,7 @@ Predator::Predator(TileMap* t_map):
 
 	m_target = sf::Vector2i(-1, -1);
 
-	m_path = m_map->createPath(m_position,m_target);
+	m_path = m_map->createPath(m_position,m_target,true);
 }
 
 Predator::~Predator() 
@@ -37,7 +38,6 @@ Predator::~Predator()
 
 void Predator::update(sf::Time deltaTime, sf::Vector2f t_playerPos, sf::Vector2f t_playerVel)
 {
-	//m_position.x += 1.0f;
 	if (m_detect)
 	{
 		pursue(t_playerPos, t_playerVel);
@@ -49,8 +49,8 @@ void Predator::update(sf::Time deltaTime, sf::Vector2f t_playerPos, sf::Vector2f
 	movement();
 
 	m_currentAngle = steer();
-	m_coneOfVision.setRotation(m_currentAngle * (180.0 / (22.0 / 7.0)));
-	m_coneOfVision.setPosition(m_position);
+	//m_coneOfVision.setRotation(m_currentAngle * (180.0 / (22.0 / 7.0)));
+	//m_coneOfVision.setPosition(m_position);
 	m_body.setPosition(m_position);
 }
 
@@ -131,16 +131,6 @@ void Predator::pursue(sf::Vector2f t_playerPos, sf::Vector2f t_playerUnitVel)
 		m_speed = m_baseSpeed;
 		m_velocity = sf::Vector2f(0, 0);
 	}
-	else if (distance() > 1000)
-	{
-		m_detect = false;
-
-		while (m_path.empty() == false)
-		{
-			m_path.pop_front();
-		}
-		m_path = m_map->createPath(m_position, m_target);
-	}
 	else
 	{
 		m_angleToTarget = angle(m_position, m_targetPosition);
@@ -161,14 +151,18 @@ void Predator::wander()
 		//m_coneOfVision.setRotation(m_angleToTarget * (180.0 / (22.0 / 7.0)) - 90);
 		m_velocity = sf::Vector2f((cosf(m_angleToTarget)) * m_speed, (sinf(m_angleToTarget)) * m_speed);
 
-		if (distance() < 10)
+		if (distance() < 5 && m_path.size() != 1)
 		{
-			m_path.pop_back();
+			m_path = m_map->createPath(m_path.back()->getPosition(), m_target, false);
+		}
+		else if (distance() < 10 && m_path.size() == 1)
+		{
+			m_path.clear();
 		}
 	}
 	else
 	{
-		m_path = m_map->createPath(m_position,m_target);
+		m_path = m_map->createPath(m_position,m_target, true);
 	}
 }
 
@@ -229,9 +223,4 @@ void Predator::render(sf::RenderWindow& window)
 {
 	//window.draw(m_rect);
 	window.draw(m_body);
-	window.draw(m_coneOfVision);
-	for (int i = 0; i < 6; i++)
-	{
-		window.draw(&m_points[i],1,sf::Points);
-	}
 }

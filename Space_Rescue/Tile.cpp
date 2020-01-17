@@ -140,7 +140,7 @@ void Tile::setColour()
 	else if (m_type == 9)
 	{
 		m_square.setFillColor(sf::Color(250, 250, 250, 80));
-		m_value = 9999;
+		m_value = 99;
 		m_wall = true;
 	}
 	else if (m_type == 10)

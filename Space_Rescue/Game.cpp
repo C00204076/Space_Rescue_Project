@@ -34,7 +34,7 @@ Game::~Game()
 /// </summary>
 void Game::initialise()
 {
-	srand(NULL);
+	srand(time(nullptr));
 	//
 	m_playerView.setCenter(m_window.getSize().x / 2, m_window.getSize().y);
 	m_playerView.setSize(1500, 900);
@@ -54,7 +54,10 @@ void Game::initialise()
 
 	m_predator = new Predator(m_tileMap);
 
-	m_worker = new Worker();
+	for (int i = 0; i < 4; i++)
+	{
+		m_worker[i] = new Worker(m_tileMap);
+	}
 
 	m_miniPlayer = new Player();
 
@@ -186,7 +189,10 @@ void Game::update(sf::Time deltaTime)
 	m_predator->update(deltaTime, m_player->getPosition(),m_player->getVelocity());
 	m_predator->detection(m_player->getPosition());
 
-	m_worker->update(deltaTime);
+	for (int i = 0; i < 4; i++)
+	{
+		m_worker[i]->update(deltaTime);
+	}
 	//
 	m_powerUp->update(deltaTime);
 	m_miniPower->setPosition(m_powerUp->getPosition());
@@ -207,7 +213,10 @@ void Game::render()
 
 	m_predator->render(m_window);
 
-	m_worker->render(m_window);
+	for (int i = 0; i < 4; i++)
+	{
+		m_worker[i]->render(m_window);
+	}
 
 	//
 	m_powerUp->render(m_window);

@@ -35,6 +35,7 @@ private:
 	float m_currentAngle;
 
 	bool m_detect;
+	bool m_wandering = false;
 
 	sf::Vector2f m_detectionPoints[6];
 	sf::Vector2f m_position;

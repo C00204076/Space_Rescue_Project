@@ -158,7 +158,7 @@ void TileMap::resetField()
 	{
 		for (int j = 1; j < 29; j++)
 		{
-			if (m_tiles[i][j]->getValue() > 0 && m_tiles[i][j]->getValue() < 999)
+			if (m_tiles[i][j]->getValue() > 0 && m_tiles[i][j]->getValue() < 99)
 			{
 				m_tiles[i][j]->setValue(0);
 			}
@@ -204,7 +204,11 @@ void TileMap::findAdjacentCells()
 		m_eastPoint = sf::Vector2i(NULL, NULL);
 	}
 
-	if (m_list.front()->getIndex().x > 1 && m_list.front()->getIndex().y > 1)
+	if (m_list.front()->getIndex().x > 1 && m_list.front()->getIndex().y > 1
+		&&
+		m_tiles[m_list.front()->getIndex().x][m_list.front()->getIndex().y - 1]->getWall() == false
+		&&
+		m_tiles[m_list.front()->getIndex().x - 1][m_list.front()->getIndex().y]->getWall() == false)
 	{
 		m_northWestPoint = sf::Vector2i(m_list.front()->getIndex().x - 1, m_list.front()->getIndex().y - 1);
 	}
@@ -213,7 +217,11 @@ void TileMap::findAdjacentCells()
 		m_northWestPoint = sf::Vector2i(NULL, NULL);
 	}
 
-	if (m_list.front()->getIndex().x < 28 && m_list.front()->getIndex().y > 1)
+	if (m_list.front()->getIndex().x < 28 && m_list.front()->getIndex().y > 1
+		&&
+		m_tiles[m_list.front()->getIndex().x][m_list.front()->getIndex().y - 1]->getWall() == false
+		&&
+		m_tiles[m_list.front()->getIndex().x + 1][m_list.front()->getIndex().y]->getWall() == false)
 	{
 		m_northEastPoint = sf::Vector2i(m_list.front()->getIndex().x + 1, m_list.front()->getIndex().y - 1);
 	}
@@ -222,7 +230,11 @@ void TileMap::findAdjacentCells()
 		m_northEastPoint = sf::Vector2i(NULL, NULL);;
 	}
 
-	if (m_list.front()->getIndex().x > 1 && m_list.front()->getIndex().y < 28)
+	if (m_list.front()->getIndex().x > 1 && m_list.front()->getIndex().y < 28
+		&&
+		m_tiles[m_list.front()->getIndex().x][m_list.front()->getIndex().y + 1]->getWall() == false
+		&&
+		m_tiles[m_list.front()->getIndex().x - 1][m_list.front()->getIndex().y]->getWall() == false)
 	{
 		m_southWestPoint = sf::Vector2i(m_list.front()->getIndex().x - 1, m_list.front()->getIndex().y + 1);
 	}
@@ -231,7 +243,11 @@ void TileMap::findAdjacentCells()
 		m_southWestPoint = sf::Vector2i(NULL, NULL);;
 	}
 
-	if (m_list.front()->getIndex().x < 28 && m_list.front()->getIndex().y < 28)
+	if (m_list.front()->getIndex().x < 28 && m_list.front()->getIndex().y < 28
+		&&
+		m_tiles[m_list.front()->getIndex().x][m_list.front()->getIndex().y + 1]->getWall() == false
+		&&
+		m_tiles[m_list.front()->getIndex().x + 1][m_list.front()->getIndex().y]->getWall() == false)
 	{
 		m_southEastPoint = sf::Vector2i(m_list.front()->getIndex().x + 1, m_list.front()->getIndex().y + 1);
 	}
@@ -327,11 +343,14 @@ void TileMap::findLowestNeighbours(Tile* t_tile, float t_angle)
 	t_tile->setLowestNeighbour(m_lowestAdjacent);
 }
 
-std::list<Tile*> TileMap::createPath(sf::Vector2f t_currentPosition, sf::Vector2i t_targetIndex)
+std::list<Tile*> TileMap::createPath(sf::Vector2f t_currentPosition, sf::Vector2i& t_targetIndex, bool t_newPathNeeded)
 {
+	m_list.clear();
 	m_startPoint = sf::Vector2i(round(t_currentPosition.x / 90.0), round(t_currentPosition.y / 90.0));
 	m_tiles[m_startPoint.x][m_startPoint.y]->setValue(1);
+
 	createCostField();
+
 	for (int i = 1; i < 29; i++)
 	{
 		for (int j = 1; j < 29; j++)
@@ -345,7 +364,7 @@ std::list<Tile*> TileMap::createPath(sf::Vector2f t_currentPosition, sf::Vector2
 	{
 		t_targetIndex = sf::Vector2i(rand() % 3, rand() % 3);
 	}
-	else
+	else if(t_newPathNeeded == true)
 	{
 		int direction;
 		bool newPathFound = false;
@@ -380,7 +399,6 @@ std::list<Tile*> TileMap::createPath(sf::Vector2f t_currentPosition, sf::Vector2
 	m_endPoint = m_keyPointIndexs[t_targetIndex.x][t_targetIndex.y];
 
 	m_list.push_back(m_tiles[m_endPoint.x][m_endPoint.y]);
-
 	sf::Vector2i m_nextPoint;
 
 	while (m_list.back() != m_tiles[m_startPoint.x][m_startPoint.y])
@@ -389,11 +407,20 @@ std::list<Tile*> TileMap::createPath(sf::Vector2f t_currentPosition, sf::Vector2
 		m_list.push_back(m_tiles[m_nextPoint.x][m_nextPoint.y]);
 	}
 
+	if (t_newPathNeeded == false)
+	{
+		m_list.pop_back();
+	}
+
 	resetField();
 
 	return m_list;
 }
 
+sf::Vector2f TileMap::getTile(int i, int j)
+{
+	return m_tiles[i][j]->getPosition();
+}
 
 //
 void TileMap::render(sf::RenderWindow& window)
