@@ -10,20 +10,28 @@
 
 #include "TileMap.h"
 
-//
+/// <summary>
+/// TileMap default constructor
+/// </summary>
+/// <param name="gridSize"></param>
 TileMap::TileMap(float gridSize) :
 	m_maxSize(gridSize)
 {
 	initialise();
 }
 
-//
+/// <summary>
+/// TileMap default destructor
+/// </summary>
 TileMap::~TileMap()
 {
 	delete this;
 }
 
-//
+/// <summary>
+/// Initialisor used in initialising the Tile Objects within the 
+/// TileMap Object, and set their m_type values
+/// </summary>
 void TileMap::initialise()
 {
 	for (int i = 0; i < m_maxSize; i++)
@@ -37,18 +45,23 @@ void TileMap::initialise()
 
 }
 
-//
+/// <summary>
+/// Method used to update the functions and variables of the TileMap Object
+/// </summary>
+/// <param name="deltaTime"></param>
+/// <param name="window"></param>
 void TileMap::update(sf::Time deltaTime, sf::RenderWindow& window)
 {
 
 }
 
-
-
-//
+/// <summary>
+/// Method used to render and draw the Tile Objects of the TileMap
+/// Object
+/// </summary>
+/// <param name="window"></param>
 void TileMap::render(sf::RenderWindow& window)
 {
-
 	for (int i = 0; i < m_maxSize; i++)
 	{
 		for (int j = 0; j < m_maxSize; j++)
@@ -59,7 +72,12 @@ void TileMap::render(sf::RenderWindow& window)
 
 }
 
-//
+/// <summary>
+/// Method used to render and draw the Tile Objects of the TileMap
+/// Object; and scale it within the MiniMap Object
+/// </summary>
+/// <param name="window"></param>
+/// <param name="scale"></param>
 void TileMap::render(sf::RenderWindow& window, sf::Vector2f scale)
 {
 
@@ -77,7 +95,12 @@ void TileMap::render(sf::RenderWindow& window, sf::Vector2f scale)
 
 }
 
-//
+/// <summary>
+/// Method used to return the and access the values of a Tile Object
+/// within the m_tiles array using the given arguements
+/// </summary>
+/// <param name="i"></param>
+/// <param name="j"></param>
 Tile* TileMap::getTiles(int i, int j)
 {
 	return m_tiles[i][j];

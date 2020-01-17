@@ -1,0 +1,80 @@
+\hypertarget{class_sweeper}{}\doxysection{Sweeper Class Reference}
+\label{class_sweeper}\index{Sweeper@{Sweeper}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sweeper_a42ab200733d8da957c5cf6fb597836a3}\label{class_sweeper_a42ab200733d8da957c5cf6fb597836a3}} 
+void {\bfseries update} (sf\+::\+Time delta\+Time, sf\+::\+Vector2f t\+\_\+player\+Pos, sf\+::\+Vector2f t\+\_\+player\+Vel)
+\item 
+\mbox{\Hypertarget{class_sweeper_ab008b9dbd123c1bb297c13918c6cd2e0}\label{class_sweeper_ab008b9dbd123c1bb297c13918c6cd2e0}} 
+void {\bfseries detection} (sf\+::\+Vector2f t\+\_\+player\+Pos)
+\item 
+\mbox{\Hypertarget{class_sweeper_a89fb597a72f39ba897f9b6f777edd700}\label{class_sweeper_a89fb597a72f39ba897f9b6f777edd700}} 
+void {\bfseries pursue} (sf\+::\+Vector2f t\+\_\+player\+Pos, sf\+::\+Vector2f t\+\_\+player\+Unit\+Vel)
+\item 
+\mbox{\Hypertarget{class_sweeper_a905aaa526db67b0742287e2a15d6a563}\label{class_sweeper_a905aaa526db67b0742287e2a15d6a563}} 
+void {\bfseries movement} ()
+\item 
+\mbox{\Hypertarget{class_sweeper_a8308b5cec3c19e0292947081100d777b}\label{class_sweeper_a8308b5cec3c19e0292947081100d777b}} 
+void {\bfseries render} (sf\+::\+Render\+Window \&window)
+\item 
+\mbox{\Hypertarget{class_sweeper_ae09b313ea696f9c26bae97d62937846d}\label{class_sweeper_ae09b313ea696f9c26bae97d62937846d}} 
+float {\bfseries steer} ()
+\item 
+\mbox{\Hypertarget{class_sweeper_a9995a07a79fbe4be6565eaa3dc411596}\label{class_sweeper_a9995a07a79fbe4be6565eaa3dc411596}} 
+float {\bfseries distance} ()
+\item 
+\mbox{\Hypertarget{class_sweeper_a2ec80e38521394c7c3341db7c99f99ae}\label{class_sweeper_a2ec80e38521394c7c3341db7c99f99ae}} 
+float {\bfseries angle} (sf\+::\+Vector2f t\+\_\+position, sf\+::\+Vector2f t\+\_\+target\+Position)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_sweeper_a2c56ba90f991004d901d91629fad9b1c}\label{class_sweeper_a2c56ba90f991004d901d91629fad9b1c}} 
+sf\+::\+Circle\+Shape {\bfseries m\+\_\+body}
+\item 
+\mbox{\Hypertarget{class_sweeper_af7a26da1fe15d9bf9f5993553773fda3}\label{class_sweeper_af7a26da1fe15d9bf9f5993553773fda3}} 
+sf\+::\+Circle\+Shape {\bfseries m\+\_\+cone\+Of\+Vision}
+\item 
+\mbox{\Hypertarget{class_sweeper_ac29c93c655a6142652ebc6d740397398}\label{class_sweeper_ac29c93c655a6142652ebc6d740397398}} 
+float {\bfseries m\+\_\+cone\+Of\+Vision\+Length}
+\item 
+\mbox{\Hypertarget{class_sweeper_a11fda14877577200a8a701183a0703be}\label{class_sweeper_a11fda14877577200a8a701183a0703be}} 
+float {\bfseries m\+\_\+angles} \mbox{[}6\mbox{]}
+\item 
+\mbox{\Hypertarget{class_sweeper_a128dd4da2ab082803bcf808125034540}\label{class_sweeper_a128dd4da2ab082803bcf808125034540}} 
+float {\bfseries m\+\_\+angle\+To\+Target}
+\item 
+\mbox{\Hypertarget{class_sweeper_a8a6220c02284c874affc73476ead2b0e}\label{class_sweeper_a8a6220c02284c874affc73476ead2b0e}} 
+float {\bfseries m\+\_\+speed}
+\item 
+\mbox{\Hypertarget{class_sweeper_a5d907cb0e2da8d3620d99c6510205164}\label{class_sweeper_a5d907cb0e2da8d3620d99c6510205164}} 
+float {\bfseries m\+\_\+base\+Speed}
+\item 
+\mbox{\Hypertarget{class_sweeper_af225d9258419944f92ac2cb019f0cd50}\label{class_sweeper_af225d9258419944f92ac2cb019f0cd50}} 
+float {\bfseries m\+\_\+current\+Angle}
+\item 
+\mbox{\Hypertarget{class_sweeper_a578a6980d1c9a3e79c4b24a6241b730c}\label{class_sweeper_a578a6980d1c9a3e79c4b24a6241b730c}} 
+bool {\bfseries m\+\_\+detect}
+\item 
+\mbox{\Hypertarget{class_sweeper_a6a859ea9c2e2b46399a9aec197ee356e}\label{class_sweeper_a6a859ea9c2e2b46399a9aec197ee356e}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+detection\+Points} \mbox{[}6\mbox{]}
+\item 
+\mbox{\Hypertarget{class_sweeper_a57a76323f7d34dbd9bd20630c25fee36}\label{class_sweeper_a57a76323f7d34dbd9bd20630c25fee36}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+position}
+\item 
+\mbox{\Hypertarget{class_sweeper_a395464470fbfc6e910d3a7dd3125ebc0}\label{class_sweeper_a395464470fbfc6e910d3a7dd3125ebc0}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+target\+Position}
+\item 
+\mbox{\Hypertarget{class_sweeper_a28db02a361ea0fd9a00952e3c5d72c23}\label{class_sweeper_a28db02a361ea0fd9a00952e3c5d72c23}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+velocity}
+\item 
+\mbox{\Hypertarget{class_sweeper_a98b93aa08d57f76bd7d2f358349fd08e}\label{class_sweeper_a98b93aa08d57f76bd7d2f358349fd08e}} 
+sf\+::\+Vertex {\bfseries m\+\_\+points} \mbox{[}6\mbox{]}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Sweeper.\+h\item 
+Sweeper.\+cpp\end{DoxyCompactItemize}

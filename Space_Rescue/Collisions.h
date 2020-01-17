@@ -20,7 +20,7 @@
 #include "Power-up.h"
 #include "Missile.h"
 
-//
+// Collision class object
 class Collisions
 {
 public:

@@ -1,0 +1,209 @@
+\hypertarget{class_tile}{}\doxysection{Tile Class Reference}
+\label{class_tile}\index{Tile@{Tile}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_tile_aeeb5593bb6b75aae2edfcccbc84ab378}{Tile}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_tile}{Tile}}\textquotesingle{}s base constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_tile_a6f09a51fdc9cc974111527920eb1cb5b}{Tile}} (int type, int gridX, int gridY)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_tile}{Tile}} default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_tile_a98634abbd93fa13d0578d7103202d03d}{$\sim$\+Tile}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_tile}{Tile}}\textquotesingle{}s default desstructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_a57444de210a362d359197d5a6b5e16e9}{render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Method used to render and draw the \mbox{\hyperlink{class_tile}{Tile}} Object \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_tile_a8582d28ecc7a974dd6d5263d73b8f1f1}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Method used to return the value m\+\_\+type \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_tile_afd69da1519691d4f82bfe0534db4f01c}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Method used to return the value of m\+\_\+position \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_tile_a94d8cf6edb365b762c5238c827e4af96}{get\+World\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Method used to return the values of m\+\_\+position multiplied by 29, giving it\textquotesingle{}s World Position \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_tile_ab15c846655321e65f08981e95fe7701f}{get\+Rect}} ()
+\begin{DoxyCompactList}\small\item\em Method used to return the value of m\+\_\+square \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_ace9997bf1cebad13c8f63e19da6fa429}{set\+Colour}} ()
+\begin{DoxyCompactList}\small\item\em Method used to set the colour and value of the \mbox{\hyperlink{class_tile}{Tile}} Object based on the value of m\+\_\+type \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_ab06e3f7c30752e988602430e97332cfb}{set\+Type}} (int type)
+\begin{DoxyCompactList}\small\item\em Method used to set the value of m\+\_\+type using the given arguement \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_tile_a31322c0b64394120053cf0d0a76cfa57}{set\+Value}} (int value)
+\begin{DoxyCompactList}\small\item\em Method used to set the value of m\+\_\+value using the given arguement \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_tile_a085ebd78e4f04b7f647587d9d7287502}{initialise}} ()
+\begin{DoxyCompactList}\small\item\em Initialisor of the \mbox{\hyperlink{class_tile}{Tile}} Object\textquotesingle{}s default variable values \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_tile_a95a36a01fab5de488d9292cac9bb48db}\label{class_tile_a95a36a01fab5de488d9292cac9bb48db}} 
+sf\+::\+Rectangle\+Shape {\bfseries m\+\_\+square}
+\item 
+\mbox{\Hypertarget{class_tile_a5d125877d1ef0ee7618b3503db6a77e2}\label{class_tile_a5d125877d1ef0ee7618b3503db6a77e2}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+position}
+\item 
+\mbox{\Hypertarget{class_tile_a676b57db08ad2d2da40c8e1d3d135508}\label{class_tile_a676b57db08ad2d2da40c8e1d3d135508}} 
+int {\bfseries m\+\_\+type}
+\item 
+\mbox{\Hypertarget{class_tile_a29d4169c992410d11c43290ded213b98}\label{class_tile_a29d4169c992410d11c43290ded213b98}} 
+int {\bfseries m\+\_\+x}
+\item 
+\mbox{\Hypertarget{class_tile_a38f13932cfad7e97ecd388c672dd2759}\label{class_tile_a38f13932cfad7e97ecd388c672dd2759}} 
+int {\bfseries m\+\_\+y}
+\item 
+\mbox{\Hypertarget{class_tile_a2ad82b6c94b5f8bea87ac5485a54dea7}\label{class_tile_a2ad82b6c94b5f8bea87ac5485a54dea7}} 
+int {\bfseries m\+\_\+value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_tile_aeeb5593bb6b75aae2edfcccbc84ab378}\label{class_tile_aeeb5593bb6b75aae2edfcccbc84ab378}} 
+\index{Tile@{Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{Tile()}{Tile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_tile}{Tile}}\textquotesingle{}s base constructor 
+
+\mbox{\Hypertarget{class_tile_a6f09a51fdc9cc974111527920eb1cb5b}\label{class_tile_a6f09a51fdc9cc974111527920eb1cb5b}} 
+\index{Tile@{Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{Tile()}{Tile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Tile\+::\+Tile (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{int}]{gridX,  }\item[{int}]{gridY }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_tile}{Tile}} default constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+{\em gridX} & \\
+\hline
+{\em gridY} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_tile_a98634abbd93fa13d0578d7103202d03d}\label{class_tile_a98634abbd93fa13d0578d7103202d03d}} 
+\index{Tile@{Tile}!````~Tile@{$\sim$Tile}}
+\index{````~Tile@{$\sim$Tile}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{$\sim$Tile()}{~Tile()}}
+{\footnotesize\ttfamily Tile\+::$\sim$\+Tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_tile}{Tile}}\textquotesingle{}s default desstructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tile_afd69da1519691d4f82bfe0534db4f01c}\label{class_tile_afd69da1519691d4f82bfe0534db4f01c}} 
+\index{Tile@{Tile}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Tile\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method used to return the value of m\+\_\+position 
+
+\mbox{\Hypertarget{class_tile_ab15c846655321e65f08981e95fe7701f}\label{class_tile_ab15c846655321e65f08981e95fe7701f}} 
+\index{Tile@{Tile}!getRect@{getRect}}
+\index{getRect@{getRect}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{getRect()}{getRect()}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape Tile\+::get\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method used to return the value of m\+\_\+square 
+
+\mbox{\Hypertarget{class_tile_a8582d28ecc7a974dd6d5263d73b8f1f1}\label{class_tile_a8582d28ecc7a974dd6d5263d73b8f1f1}} 
+\index{Tile@{Tile}!getType@{getType}}
+\index{getType@{getType}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily int Tile\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method used to return the value m\+\_\+type 
+
+\mbox{\Hypertarget{class_tile_a94d8cf6edb365b762c5238c827e4af96}\label{class_tile_a94d8cf6edb365b762c5238c827e4af96}} 
+\index{Tile@{Tile}!getWorldPosition@{getWorldPosition}}
+\index{getWorldPosition@{getWorldPosition}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{getWorldPosition()}{getWorldPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Tile\+::get\+World\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method used to return the values of m\+\_\+position multiplied by 29, giving it\textquotesingle{}s World Position 
+
+\mbox{\Hypertarget{class_tile_a085ebd78e4f04b7f647587d9d7287502}\label{class_tile_a085ebd78e4f04b7f647587d9d7287502}} 
+\index{Tile@{Tile}!initialise@{initialise}}
+\index{initialise@{initialise}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{initialise()}{initialise()}}
+{\footnotesize\ttfamily void Tile\+::initialise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialisor of the \mbox{\hyperlink{class_tile}{Tile}} Object\textquotesingle{}s default variable values 
+
+\mbox{\Hypertarget{class_tile_a57444de210a362d359197d5a6b5e16e9}\label{class_tile_a57444de210a362d359197d5a6b5e16e9}} 
+\index{Tile@{Tile}!render@{render}}
+\index{render@{render}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Tile\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Method used to render and draw the \mbox{\hyperlink{class_tile}{Tile}} Object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_tile_ace9997bf1cebad13c8f63e19da6fa429}\label{class_tile_ace9997bf1cebad13c8f63e19da6fa429}} 
+\index{Tile@{Tile}!setColour@{setColour}}
+\index{setColour@{setColour}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{setColour()}{setColour()}}
+{\footnotesize\ttfamily void Tile\+::set\+Colour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method used to set the colour and value of the \mbox{\hyperlink{class_tile}{Tile}} Object based on the value of m\+\_\+type 
+
+\mbox{\Hypertarget{class_tile_ab06e3f7c30752e988602430e97332cfb}\label{class_tile_ab06e3f7c30752e988602430e97332cfb}} 
+\index{Tile@{Tile}!setType@{setType}}
+\index{setType@{setType}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily void Tile\+::set\+Type (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})}
+
+
+
+Method used to set the value of m\+\_\+type using the given arguement 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_tile_a31322c0b64394120053cf0d0a76cfa57}\label{class_tile_a31322c0b64394120053cf0d0a76cfa57}} 
+\index{Tile@{Tile}!setValue@{setValue}}
+\index{setValue@{setValue}!Tile@{Tile}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Tile\+::set\+Value (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Method used to set the value of m\+\_\+value using the given arguement 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Tile.\+h\item 
+Tile.\+cpp\end{DoxyCompactItemize}

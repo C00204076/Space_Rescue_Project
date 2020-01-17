@@ -17,7 +17,7 @@
 #include "SFML/Graphics.hpp"
 #include "TileMap.h"
 
-//
+// PowerUp Class Object
 class PowerUp
 {
 public:

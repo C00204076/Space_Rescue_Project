@@ -20,7 +20,7 @@
 #include <vector>
 #include <string>
 
-//
+// Tile Class Object
 class Tile
 {
 public:

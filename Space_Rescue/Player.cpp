@@ -10,19 +10,25 @@
 
 #include "Player.h"
 
-//
+/// <summary>
+/// 
+/// </summary>
 Player::Player()
 {
 	initalise();
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 Player::~Player()
 {
 	delete this;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 void Player::initalise()
 {
 	loadTexture();
@@ -58,7 +64,9 @@ void Player::initalise()
 	m_hit = false;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 void Player::loadTexture()
 {
 	if (!m_texture.loadFromFile("../Space_Rescue/ASSETS/TEXTURES/MrBlock.png"))
@@ -72,7 +80,9 @@ void Player::loadTexture()
 	}
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 void Player::move()
 {
 	//
@@ -123,7 +133,9 @@ void Player::move()
 
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 void Player::powerup()
 {
 	//
@@ -192,7 +204,9 @@ void Player::powerup()
 	}
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 void Player::iFrames()
 {
 	if (m_hit == true && m_hp > 0)
@@ -225,7 +239,9 @@ void Player::iFrames()
 	}
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 void Player::fire()
 {
 	//
@@ -249,6 +265,10 @@ void Player::fire()
 	}
 }
 
+/// <summary>
+/// 
+/// </summary>
+/// <param name="tilemap"></param>
 void Player::tileCollision(TileMap* tilemap)
 {
 	for (int i = 0; i < 30; i++)
@@ -275,7 +295,9 @@ void Player::tileCollision(TileMap* tilemap)
 	}
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 void Player::collision()
 {
 	if (m_collide == true)
@@ -307,23 +329,28 @@ void Player::collision()
 	}
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="deltaTime"></param>
+/// <param name="v"></param>
 void Player::update(sf::Time deltaTime, sf::View &v)
 {
-	//
+	
 	move();
-	//
+	
 	powerup();
-	//
+	
 	iFrames();
-	//
+	
 	fire();
 	m_bullet->update(deltaTime);
-	//
+	
 	v.setCenter(m_position.x, m_position.y);
 
 	m_center = m_position;
 }
+
 /// <summary>
 /// bullets[i]->~bullet();
 /// bullets[i] = nullptr;
@@ -332,7 +359,10 @@ void Player::update(sf::Time deltaTime, sf::View &v)
 /// </summary>
 
 
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="window"></param>
 void Player::render(sf::RenderWindow& window)
 {
 	m_bullet->render(window);
@@ -341,113 +371,159 @@ void Player::render(sf::RenderWindow& window)
 	window.draw(m_powerupSprite);
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="window"></param>
+/// <param name="scale"></param>
 void Player::render(sf::RenderWindow& window, sf::Vector2f scale)
 {
-	//
 	m_sprite.setScale(scale);
-	//
+	
 	window.draw(m_sprite);
 	window.draw(&m_center,1,sf::Points);
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 sf::Vector2f Player::getPosition()
 {
 	return m_position;
 }
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="position"></param>
 void Player::setPosition(sf::Vector2f position)
 {
 	m_position = position;
 	m_sprite.setPosition(position);
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 sf::Sprite Player::getSprite()
 {
 	return m_sprite;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 sf::Vector2f Player::getVelocity()
 {
 	return m_velocity;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 bool Player::getImmune()
 {
 	return m_immune;
 }
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="immune"></param>
 void Player::setImmune(bool immune)
 {
 	m_immune = immune;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 bool Player::getSpeed()
 {
 	return m_speed;
 }
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="speed"></param>
 void Player::setSpeed(bool speed)
 {
 	m_speed = speed;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 bool Player::getCollide()
 {
 	return m_collide;
 }
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="collide"></param>
 void Player::setCollide(bool collide)
 {
 	m_collide = collide;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 bool Player::getHit()
 {
 	return m_hit;
 }
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="hit"></param>
 void Player::setHit(bool hit)
 {
 	m_hit = hit;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 int Player::getHP()
 {
 	return m_hp;
 }
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="hp"></param>
 void Player::setHP(int hp)
 {
 	m_hp = hp;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 void Player::setFireDelay(int fireDelay)
 {
 	m_fireDelay = fireDelay;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 Missile* Player::getMissile()
 {
 	return m_bullet;
 }
 
-//
+/// <summary>
+/// 
+/// </summary>
 int Player::getPowerUpTime()
 {
 	return m_powerupTime;
 }
-//
+/// <summary>
+/// 
+/// </summary>
+/// <param name="time"></param>
 void Player::setPowerUpTime(int time)
 {
 	m_powerupTime = time;

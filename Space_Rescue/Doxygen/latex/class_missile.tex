@@ -1,0 +1,318 @@
+\hypertarget{class_missile}{}\doxysection{Missile Class Reference}
+\label{class_missile}\index{Missile@{Missile}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_missile_a06e48804229cca8d387b46635fa076d9}{Missile}} (bool is\+Player, bool is\+Nest)
+\item 
+\mbox{\hyperlink{class_missile_ad42379e48a46ec3556056f98ce8bd912}{$\sim$\+Missile}} ()
+\item 
+void \mbox{\hyperlink{class_missile_a6ddbfd1906c6d7a2164dae97027b517c}{update}} (sf\+::\+Time delta\+Time)
+\item 
+void \mbox{\hyperlink{class_missile_a882289a30763d8307727a674655c7367}{render}} (sf\+::\+Render\+Window \&window)
+\item 
+void \mbox{\hyperlink{class_missile_ad8e81e4be6458fff55b5b9c241e27a2c}{set\+Rotation}} (\mbox{\hyperlink{class_player}{Player}} $\ast$player)
+\begin{DoxyCompactList}\small\item\em Set rotation of \mbox{\hyperlink{class_missile}{Missile}}, when it is fired from the \mbox{\hyperlink{class_player}{Player}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_missile_a127bff2360e656c73bed2f047a816ee4}{set\+Missile\+Rotation}} (\mbox{\hyperlink{class_player}{Player}} $\ast$player)
+\begin{DoxyCompactList}\small\item\em Set rotation of \mbox{\hyperlink{class_missile}{Missile}}, when it is fired at the \mbox{\hyperlink{class_player}{Player}} \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_missile_ad07ea218b8c2b6e7f52c78095a978340}{get\+Position}} ()
+\item 
+void \mbox{\hyperlink{class_missile_adaf0cae9081980e7a6add40e2cb5bd88}{set\+Position}} (sf\+::\+Vector2f position)
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_missile_a95c700e009dcf4977943dd187d045669}{get\+Sprite}} ()
+\item 
+void \mbox{\hyperlink{class_missile_a11a8b1c3b90dbbf610c9d3db7fb3f684}{set\+Is\+Player}} (bool is\+Player)
+\item 
+bool \mbox{\hyperlink{class_missile_a8c1f2c033e586c008746733664576dbf}{get\+Is\+Player}} ()
+\item 
+void \mbox{\hyperlink{class_missile_a6a80de1c429a32c2a3e48c89709207aa}{set\+Is\+Nest}} (bool is\+Nest)
+\item 
+bool \mbox{\hyperlink{class_missile_aad7ec6dc2e1d164d6386c90d21277202}{get\+Is\+Nest}} ()
+\item 
+void \mbox{\hyperlink{class_missile_a120dfe34d91199bd8d03bcb1ad100504}{set\+Active}} (bool active)
+\item 
+bool \mbox{\hyperlink{class_missile_ad69c00305ce4b2bd2032c7c4dae3584a}{get\+Active}} ()
+\item 
+void \mbox{\hyperlink{class_missile_a029dddf13285db7148ef2a42ca0df7f9}{set\+Life\+Time}} (int life\+Time)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_missile_a529395b9cc53fa5c627a1efe4ea1d073}{initialise}} ()
+\item 
+void \mbox{\hyperlink{class_missile_a5df4a7604b85c6073fc77b5d5f7fb3e5}{load\+Texture}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_missile_aee138dea114b6d8f0aec3bb95ea71f50}\label{class_missile_aee138dea114b6d8f0aec3bb95ea71f50}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+position}
+\item 
+\mbox{\Hypertarget{class_missile_aa36d8d7569ae95104fed5ed1a0b90440}\label{class_missile_aa36d8d7569ae95104fed5ed1a0b90440}} 
+sf\+::\+Vector2f {\bfseries m\+\_\+velocity}
+\item 
+\mbox{\Hypertarget{class_missile_ac006e17dd989f5a3659c72060883dd3d}\label{class_missile_ac006e17dd989f5a3659c72060883dd3d}} 
+sf\+::\+Sprite {\bfseries m\+\_\+sprite}
+\item 
+\mbox{\Hypertarget{class_missile_a3abf2f629a9f0536031bbc2d7820e82f}\label{class_missile_a3abf2f629a9f0536031bbc2d7820e82f}} 
+sf\+::\+Texture {\bfseries m\+\_\+texture\+One}
+\item 
+\mbox{\Hypertarget{class_missile_aef1b000a1c6088c1f410e627bc8436b5}\label{class_missile_aef1b000a1c6088c1f410e627bc8436b5}} 
+sf\+::\+Texture {\bfseries m\+\_\+texture\+Two}
+\item 
+\mbox{\Hypertarget{class_missile_a8d8562de42462daf5359e1e7f64e3222}\label{class_missile_a8d8562de42462daf5359e1e7f64e3222}} 
+int {\bfseries m\+\_\+life\+Time}
+\item 
+\mbox{\Hypertarget{class_missile_a384b91925787a14506bdb4bd6a88b437}\label{class_missile_a384b91925787a14506bdb4bd6a88b437}} 
+bool {\bfseries m\+\_\+is\+Player}
+\item 
+\mbox{\Hypertarget{class_missile_a7fb1b02ecbc177a98592ff726d45e099}\label{class_missile_a7fb1b02ecbc177a98592ff726d45e099}} 
+bool {\bfseries m\+\_\+is\+Nest}
+\item 
+\mbox{\Hypertarget{class_missile_a5a76ffc8a6a752422cd49a278bcb410e}\label{class_missile_a5a76ffc8a6a752422cd49a278bcb410e}} 
+bool {\bfseries m\+\_\+active}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_missile_a06e48804229cca8d387b46635fa076d9}\label{class_missile_a06e48804229cca8d387b46635fa076d9}} 
+\index{Missile@{Missile}!Missile@{Missile}}
+\index{Missile@{Missile}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{Missile()}{Missile()}}
+{\footnotesize\ttfamily Missile\+::\+Missile (\begin{DoxyParamCaption}\item[{bool}]{is\+Player,  }\item[{bool}]{is\+Nest }\end{DoxyParamCaption})}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Player} & \\
+\hline
+{\em is\+Nest} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_missile_ad42379e48a46ec3556056f98ce8bd912}\label{class_missile_ad42379e48a46ec3556056f98ce8bd912}} 
+\index{Missile@{Missile}!````~Missile@{$\sim$Missile}}
+\index{````~Missile@{$\sim$Missile}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{$\sim$Missile()}{~Missile()}}
+{\footnotesize\ttfamily Missile\+::$\sim$\+Missile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_missile_ad69c00305ce4b2bd2032c7c4dae3584a}\label{class_missile_ad69c00305ce4b2bd2032c7c4dae3584a}} 
+\index{Missile@{Missile}!getActive@{getActive}}
+\index{getActive@{getActive}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{getActive()}{getActive()}}
+{\footnotesize\ttfamily bool Missile\+::get\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+\mbox{\Hypertarget{class_missile_aad7ec6dc2e1d164d6386c90d21277202}\label{class_missile_aad7ec6dc2e1d164d6386c90d21277202}} 
+\index{Missile@{Missile}!getIsNest@{getIsNest}}
+\index{getIsNest@{getIsNest}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{getIsNest()}{getIsNest()}}
+{\footnotesize\ttfamily bool Missile\+::get\+Is\+Nest (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+\mbox{\Hypertarget{class_missile_a8c1f2c033e586c008746733664576dbf}\label{class_missile_a8c1f2c033e586c008746733664576dbf}} 
+\index{Missile@{Missile}!getIsPlayer@{getIsPlayer}}
+\index{getIsPlayer@{getIsPlayer}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{getIsPlayer()}{getIsPlayer()}}
+{\footnotesize\ttfamily bool Missile\+::get\+Is\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+\mbox{\Hypertarget{class_missile_ad07ea218b8c2b6e7f52c78095a978340}\label{class_missile_ad07ea218b8c2b6e7f52c78095a978340}} 
+\index{Missile@{Missile}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Missile\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+\mbox{\Hypertarget{class_missile_a95c700e009dcf4977943dd187d045669}\label{class_missile_a95c700e009dcf4977943dd187d045669}} 
+\index{Missile@{Missile}!getSprite@{getSprite}}
+\index{getSprite@{getSprite}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{getSprite()}{getSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite Missile\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+
+
+\mbox{\Hypertarget{class_missile_a529395b9cc53fa5c627a1efe4ea1d073}\label{class_missile_a529395b9cc53fa5c627a1efe4ea1d073}} 
+\index{Missile@{Missile}!initialise@{initialise}}
+\index{initialise@{initialise}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{initialise()}{initialise()}}
+{\footnotesize\ttfamily void Missile\+::initialise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+
+
+\mbox{\Hypertarget{class_missile_a5df4a7604b85c6073fc77b5d5f7fb3e5}\label{class_missile_a5df4a7604b85c6073fc77b5d5f7fb3e5}} 
+\index{Missile@{Missile}!loadTexture@{loadTexture}}
+\index{loadTexture@{loadTexture}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{loadTexture()}{loadTexture()}}
+{\footnotesize\ttfamily void Missile\+::load\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+
+
+\mbox{\Hypertarget{class_missile_a882289a30763d8307727a674655c7367}\label{class_missile_a882289a30763d8307727a674655c7367}} 
+\index{Missile@{Missile}!render@{render}}
+\index{render@{render}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Missile\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_missile_a120dfe34d91199bd8d03bcb1ad100504}\label{class_missile_a120dfe34d91199bd8d03bcb1ad100504}} 
+\index{Missile@{Missile}!setActive@{setActive}}
+\index{setActive@{setActive}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{setActive()}{setActive()}}
+{\footnotesize\ttfamily void Missile\+::set\+Active (\begin{DoxyParamCaption}\item[{bool}]{active }\end{DoxyParamCaption})}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em active} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_missile_a6a80de1c429a32c2a3e48c89709207aa}\label{class_missile_a6a80de1c429a32c2a3e48c89709207aa}} 
+\index{Missile@{Missile}!setIsNest@{setIsNest}}
+\index{setIsNest@{setIsNest}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{setIsNest()}{setIsNest()}}
+{\footnotesize\ttfamily void Missile\+::set\+Is\+Nest (\begin{DoxyParamCaption}\item[{bool}]{is\+Nest }\end{DoxyParamCaption})}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Nest} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_missile_a11a8b1c3b90dbbf610c9d3db7fb3f684}\label{class_missile_a11a8b1c3b90dbbf610c9d3db7fb3f684}} 
+\index{Missile@{Missile}!setIsPlayer@{setIsPlayer}}
+\index{setIsPlayer@{setIsPlayer}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{setIsPlayer()}{setIsPlayer()}}
+{\footnotesize\ttfamily void Missile\+::set\+Is\+Player (\begin{DoxyParamCaption}\item[{bool}]{is\+Player }\end{DoxyParamCaption})}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Player} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_missile_a029dddf13285db7148ef2a42ca0df7f9}\label{class_missile_a029dddf13285db7148ef2a42ca0df7f9}} 
+\index{Missile@{Missile}!setLifeTime@{setLifeTime}}
+\index{setLifeTime@{setLifeTime}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{setLifeTime()}{setLifeTime()}}
+{\footnotesize\ttfamily void Missile\+::set\+Life\+Time (\begin{DoxyParamCaption}\item[{int}]{life\+Time }\end{DoxyParamCaption})}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em life\+Time} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_missile_a127bff2360e656c73bed2f047a816ee4}\label{class_missile_a127bff2360e656c73bed2f047a816ee4}} 
+\index{Missile@{Missile}!setMissileRotation@{setMissileRotation}}
+\index{setMissileRotation@{setMissileRotation}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{setMissileRotation()}{setMissileRotation()}}
+{\footnotesize\ttfamily void Missile\+::set\+Missile\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} $\ast$}]{player }\end{DoxyParamCaption})}
+
+
+
+Set rotation of \mbox{\hyperlink{class_missile}{Missile}}, when it is fired at the \mbox{\hyperlink{class_player}{Player}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_missile_adaf0cae9081980e7a6add40e2cb5bd88}\label{class_missile_adaf0cae9081980e7a6add40e2cb5bd88}} 
+\index{Missile@{Missile}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Missile\+::set\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{position }\end{DoxyParamCaption})}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_missile_ad8e81e4be6458fff55b5b9c241e27a2c}\label{class_missile_ad8e81e4be6458fff55b5b9c241e27a2c}} 
+\index{Missile@{Missile}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void Missile\+::set\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} $\ast$}]{player }\end{DoxyParamCaption})}
+
+
+
+Set rotation of \mbox{\hyperlink{class_missile}{Missile}}, when it is fired from the \mbox{\hyperlink{class_player}{Player}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_missile_a6ddbfd1906c6d7a2164dae97027b517c}\label{class_missile_a6ddbfd1906c6d7a2164dae97027b517c}} 
+\index{Missile@{Missile}!update@{update}}
+\index{update@{update}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Missile\+::update (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Missile.\+h\item 
+Missile.\+cpp\end{DoxyCompactItemize}

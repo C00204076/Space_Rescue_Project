@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
+// Predator Class Object
 class Predator
 {
 public:

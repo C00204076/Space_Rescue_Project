@@ -13,7 +13,7 @@
 
 #include "Tile.h"
 
-//
+// TileMap Class Object
 class TileMap
 {
 public:
@@ -33,7 +33,7 @@ private:
 
 	float m_maxSize;
 	Tile* m_tiles[30][30];
-
+	// Game World/Map layout
 	int m_map[30][30] = {
 	{ 9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9, } ,
 	{ 9,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  9, } ,

@@ -1,0 +1,206 @@
+\hypertarget{class_collisions}{}\doxysection{Collisions Class Reference}
+\label{class_collisions}\index{Collisions@{Collisions}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collisions_a006630da4b62b10ebf123c6333c2b198}{Collisions}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_collisions}{Collisions}} default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_collisions_a39a613fd2a130b096c616f74f776d2f9}{$\sim$\+Collisions}} ()
+\begin{DoxyCompactList}\small\item\em Collsions default constructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collisions_a089c705581d33f431f099dfa625bb603}{update}} (\mbox{\hyperlink{class_player}{Player}} $\ast$player, \mbox{\hyperlink{class_tile_map}{Tile\+Map}} $\ast$tilemap, \mbox{\hyperlink{class_power_up}{Power\+Up}} $\ast$powerup, \mbox{\hyperlink{class_missile}{Missile}} $\ast$missile)
+\begin{DoxyCompactList}\small\item\em Method used to update all collision methods using the \mbox{\hyperlink{class_game}{Game}}\textquotesingle{}s Game\+Objects as arguements \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_collisions_ab8ccc74ce2a3797751adf711ddf9e85a}{player\+Power\+Up\+Collision}} (\mbox{\hyperlink{class_player}{Player}} $\ast$player, \mbox{\hyperlink{class_power_up}{Power\+Up}} $\ast$powerup)
+\begin{DoxyCompactList}\small\item\em Detects the collsion between the \mbox{\hyperlink{class_player}{Player}} and \mbox{\hyperlink{class_power_up}{Power\+Up}} Objects \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collisions_a037f125f49c7c09fc22484990e05a1d0}{player\+Tile\+Collision}} (\mbox{\hyperlink{class_player}{Player}} $\ast$player, \mbox{\hyperlink{class_tile_map}{Tile\+Map}} $\ast$tilemap)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_player}{Player}} and \mbox{\hyperlink{class_tile}{Tile}} Objects \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collisions_a11c76c59d2253a1a6f304bdf5eac7265}{player\+Missile\+Collision}} (\mbox{\hyperlink{class_player}{Player}} $\ast$player, \mbox{\hyperlink{class_missile}{Missile}} $\ast$missile)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_player}{Player}} and Nest \mbox{\hyperlink{class_missile}{Missile}} Objects \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collisions_ae2034c2859fbdd65b2399588c17ea66e}{player\+Enemy\+Collision}} (\mbox{\hyperlink{class_player}{Player}} $\ast$player)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_player}{Player}} and \mbox{\hyperlink{class_predator}{Predator}} Objects \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collisions_a10075b3cd2017f2b1618f91a191a0fd4}{enemy\+Missile\+Collision}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_collisions}{Collisions}} between\+Predator and \mbox{\hyperlink{class_missile}{Missile}} Objects \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collisions_a02813b767b961269e18489b3454df410}{enemy\+Tile\+Collision}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_predator}{Predator}} and \mbox{\hyperlink{class_tile}{Tile}} Objects \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collisions_a99251181be3fd56b2230bce6d9fba842}{player\+Worker\+Collision}} (\mbox{\hyperlink{class_player}{Player}} $\ast$player)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_player}{Player}} and \mbox{\hyperlink{class_worker}{Worker}} Objects \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collisions_a5a0e1675c8305c1841ab6189f102595d}{enemy\+Worker\+Collision}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_worker}{Worker}} and \mbox{\hyperlink{class_predator}{Predator}} Objects \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collisions_aee517d6166f50045f19d4bf7f7679729}{worker\+Tile\+Collision}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_worker}{Worker}} and \mbox{\hyperlink{class_tile}{Tile}} Objects \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_collisions_a006630da4b62b10ebf123c6333c2b198}\label{class_collisions_a006630da4b62b10ebf123c6333c2b198}} 
+\index{Collisions@{Collisions}!Collisions@{Collisions}}
+\index{Collisions@{Collisions}!Collisions@{Collisions}}
+\doxysubsubsection{\texorpdfstring{Collisions()}{Collisions()}}
+{\footnotesize\ttfamily Collisions\+::\+Collisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_collisions}{Collisions}} default constructor 
+
+\mbox{\Hypertarget{class_collisions_a39a613fd2a130b096c616f74f776d2f9}\label{class_collisions_a39a613fd2a130b096c616f74f776d2f9}} 
+\index{Collisions@{Collisions}!````~Collisions@{$\sim$Collisions}}
+\index{````~Collisions@{$\sim$Collisions}!Collisions@{Collisions}}
+\doxysubsubsection{\texorpdfstring{$\sim$Collisions()}{~Collisions()}}
+{\footnotesize\ttfamily Collisions\+::$\sim$\+Collisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Collsions default constructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_collisions_a10075b3cd2017f2b1618f91a191a0fd4}\label{class_collisions_a10075b3cd2017f2b1618f91a191a0fd4}} 
+\index{Collisions@{Collisions}!enemyMissileCollision@{enemyMissileCollision}}
+\index{enemyMissileCollision@{enemyMissileCollision}!Collisions@{Collisions}}
+\doxysubsubsection{\texorpdfstring{enemyMissileCollision()}{enemyMissileCollision()}}
+{\footnotesize\ttfamily void Collisions\+::enemy\+Missile\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_collisions}{Collisions}} between\+Predator and \mbox{\hyperlink{class_missile}{Missile}} Objects 
+
+\mbox{\Hypertarget{class_collisions_a02813b767b961269e18489b3454df410}\label{class_collisions_a02813b767b961269e18489b3454df410}} 
+\index{Collisions@{Collisions}!enemyTileCollision@{enemyTileCollision}}
+\index{enemyTileCollision@{enemyTileCollision}!Collisions@{Collisions}}
+\doxysubsubsection{\texorpdfstring{enemyTileCollision()}{enemyTileCollision()}}
+{\footnotesize\ttfamily void Collisions\+::enemy\+Tile\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_predator}{Predator}} and \mbox{\hyperlink{class_tile}{Tile}} Objects 
+
+\mbox{\Hypertarget{class_collisions_a5a0e1675c8305c1841ab6189f102595d}\label{class_collisions_a5a0e1675c8305c1841ab6189f102595d}} 
+\index{Collisions@{Collisions}!enemyWorkerCollision@{enemyWorkerCollision}}
+\index{enemyWorkerCollision@{enemyWorkerCollision}!Collisions@{Collisions}}
+\doxysubsubsection{\texorpdfstring{enemyWorkerCollision()}{enemyWorkerCollision()}}
+{\footnotesize\ttfamily void Collisions\+::enemy\+Worker\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_worker}{Worker}} and \mbox{\hyperlink{class_predator}{Predator}} Objects 
+
+\mbox{\Hypertarget{class_collisions_ae2034c2859fbdd65b2399588c17ea66e}\label{class_collisions_ae2034c2859fbdd65b2399588c17ea66e}} 
+\index{Collisions@{Collisions}!playerEnemyCollision@{playerEnemyCollision}}
+\index{playerEnemyCollision@{playerEnemyCollision}!Collisions@{Collisions}}
+\doxysubsubsection{\texorpdfstring{playerEnemyCollision()}{playerEnemyCollision()}}
+{\footnotesize\ttfamily void Collisions\+::player\+Enemy\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} $\ast$}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_player}{Player}} and \mbox{\hyperlink{class_predator}{Predator}} Objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_collisions_a11c76c59d2253a1a6f304bdf5eac7265}\label{class_collisions_a11c76c59d2253a1a6f304bdf5eac7265}} 
+\index{Collisions@{Collisions}!playerMissileCollision@{playerMissileCollision}}
+\index{playerMissileCollision@{playerMissileCollision}!Collisions@{Collisions}}
+\doxysubsubsection{\texorpdfstring{playerMissileCollision()}{playerMissileCollision()}}
+{\footnotesize\ttfamily void Collisions\+::player\+Missile\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} $\ast$}]{player,  }\item[{\mbox{\hyperlink{class_missile}{Missile}} $\ast$}]{missile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_player}{Player}} and Nest \mbox{\hyperlink{class_missile}{Missile}} Objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+{\em missile} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_collisions_ab8ccc74ce2a3797751adf711ddf9e85a}\label{class_collisions_ab8ccc74ce2a3797751adf711ddf9e85a}} 
+\index{Collisions@{Collisions}!playerPowerUpCollision@{playerPowerUpCollision}}
+\index{playerPowerUpCollision@{playerPowerUpCollision}!Collisions@{Collisions}}
+\doxysubsubsection{\texorpdfstring{playerPowerUpCollision()}{playerPowerUpCollision()}}
+{\footnotesize\ttfamily void Collisions\+::player\+Power\+Up\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} $\ast$}]{player,  }\item[{\mbox{\hyperlink{class_power_up}{Power\+Up}} $\ast$}]{powerup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Detects the collsion between the \mbox{\hyperlink{class_player}{Player}} and \mbox{\hyperlink{class_power_up}{Power\+Up}} Objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+{\em powerup} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_collisions_a037f125f49c7c09fc22484990e05a1d0}\label{class_collisions_a037f125f49c7c09fc22484990e05a1d0}} 
+\index{Collisions@{Collisions}!playerTileCollision@{playerTileCollision}}
+\index{playerTileCollision@{playerTileCollision}!Collisions@{Collisions}}
+\doxysubsubsection{\texorpdfstring{playerTileCollision()}{playerTileCollision()}}
+{\footnotesize\ttfamily void Collisions\+::player\+Tile\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} $\ast$}]{player,  }\item[{\mbox{\hyperlink{class_tile_map}{Tile\+Map}} $\ast$}]{tilemap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_player}{Player}} and \mbox{\hyperlink{class_tile}{Tile}} Objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+{\em tilemap} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_collisions_a99251181be3fd56b2230bce6d9fba842}\label{class_collisions_a99251181be3fd56b2230bce6d9fba842}} 
+\index{Collisions@{Collisions}!playerWorkerCollision@{playerWorkerCollision}}
+\index{playerWorkerCollision@{playerWorkerCollision}!Collisions@{Collisions}}
+\doxysubsubsection{\texorpdfstring{playerWorkerCollision()}{playerWorkerCollision()}}
+{\footnotesize\ttfamily void Collisions\+::player\+Worker\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} $\ast$}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_player}{Player}} and \mbox{\hyperlink{class_worker}{Worker}} Objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_collisions_a089c705581d33f431f099dfa625bb603}\label{class_collisions_a089c705581d33f431f099dfa625bb603}} 
+\index{Collisions@{Collisions}!update@{update}}
+\index{update@{update}!Collisions@{Collisions}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Collisions\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} $\ast$}]{player,  }\item[{\mbox{\hyperlink{class_tile_map}{Tile\+Map}} $\ast$}]{tilemap,  }\item[{\mbox{\hyperlink{class_power_up}{Power\+Up}} $\ast$}]{powerup,  }\item[{\mbox{\hyperlink{class_missile}{Missile}} $\ast$}]{missile }\end{DoxyParamCaption})}
+
+
+
+Method used to update all collision methods using the \mbox{\hyperlink{class_game}{Game}}\textquotesingle{}s Game\+Objects as arguements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \\
+\hline
+{\em tilemap} & \\
+\hline
+{\em powerup} & \\
+\hline
+{\em missile} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_collisions_aee517d6166f50045f19d4bf7f7679729}\label{class_collisions_aee517d6166f50045f19d4bf7f7679729}} 
+\index{Collisions@{Collisions}!workerTileCollision@{workerTileCollision}}
+\index{workerTileCollision@{workerTileCollision}!Collisions@{Collisions}}
+\doxysubsubsection{\texorpdfstring{workerTileCollision()}{workerTileCollision()}}
+{\footnotesize\ttfamily void Collisions\+::worker\+Tile\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_collisions}{Collisions}} between \mbox{\hyperlink{class_worker}{Worker}} and \mbox{\hyperlink{class_tile}{Tile}} Objects 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Collisions.\+h\item 
+Collisions.\+cpp\end{DoxyCompactItemize}

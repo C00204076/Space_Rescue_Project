@@ -10,31 +10,40 @@
 
 #include "Collisions.h"
 
-//
+/// <summary>
+/// Collisions default constructor
+/// </summary>
 Collisions::Collisions()
 {
 
 }
 
-//
+/// <summary>
+/// Collsions default constructor
+/// </summary>
 Collisions::~Collisions()
 {
 	//delete this;
 }
 
-//
+/// <summary>
+/// Detects the collsion between the Player and PowerUp Objects
+/// </summary>
+/// <param name="player"></param>
+/// <param name="powerup"></param>
 void Collisions::playerPowerUpCollision(Player* player, PowerUp* powerup)
 {
-	//
+	// Uses simple intersection, using the GobalBounds of both Object as 
+	// nothing overly complex is needed
 	if (player->getSprite().getGlobalBounds().intersects(powerup->getSprite().getGlobalBounds()))
 	{
-		//
+		// If the PowerUp's m_type is 1, i.e damage-resist powerup
 		if (powerup->getType() == 1)
 		{
 			player->setImmune(true);
 			player->setSpeed(false);
 		}
-		//
+		// If the PowerU's m_type is 2, i.e speed boost powerup
 		else if (powerup->getType() == 2)
 		{
 			player->setImmune(false);
@@ -47,7 +56,11 @@ void Collisions::playerPowerUpCollision(Player* player, PowerUp* powerup)
 	}
 }
 
-//
+/// <summary>
+/// Collisions between Player and Tile Objects
+/// </summary>
+/// <param name="player"></param>
+/// <param name="tilemap"></param>
 void Collisions::playerTileCollision(Player* player, TileMap* tilemap)
 {
 	/*sprite.getPosition().x < sprite2.getPosition().x + shape2.width &&
@@ -74,10 +87,15 @@ void Collisions::playerTileCollision(Player* player, TileMap* tilemap)
 	}*/
 }
 
-//
+/// <summary>
+/// Collisions between Player and Nest Missile Objects
+/// </summary>
+/// <param name="player"></param>
+/// <param name="missile"></param>
 void Collisions::playerMissileCollision(Player* player, Missile* missile)
 {
-	//
+	// Checks to set if Missile Object is set to NEst and not Player 
+	// before collision
 	if (missile->getIsNest() == true && missile->getIsPlayer() == true)
 	{
 		if (player->getSprite().getGlobalBounds().intersects(missile->getSprite().getGlobalBounds()))
@@ -87,43 +105,64 @@ void Collisions::playerMissileCollision(Player* player, Missile* missile)
 	}
 }
 
-//
+/// <summary>
+/// Collisions between Player and Predator Objects
+/// </summary>
+/// <param name="player"></param>
 void Collisions::playerEnemyCollision(Player* player)
 {
 	player->setHit(true);
 }
 
-//
+/// <summary>
+/// Collisions betweenPredator and Missile Objects
+/// </summary>
 void Collisions::enemyMissileCollision()
 {
 
 }
 
-//
+/// <summary>
+/// Collisions between Predator and Tile Objects
+/// </summary>
 void Collisions::enemyTileCollision()
 {
 
 }
 
-//
+/// <summary>
+/// Collisions between Player and Worker Objects
+/// </summary>
+/// <param name="player"></param>
 void Collisions::playerWorkerCollision(Player* player)
 {
 
 }
 
-//
+/// <summary>
+/// Collisions between Worker and Predator Objects
+/// </summary>
 void Collisions::enemyWorkerCollision()
 {
 
 }
 
-//
+/// <summary>
+/// Collisions between Worker and Tile Objects
+/// </summary>
 void Collisions::workerTileCollision()
 {
 
 }
 
-//
+/// <summary>
+/// Method used to update all collision methods using the Game's
+/// GameObjects as arguements
+/// </summary>
+/// <param name="player"></param>
+/// <param name="tilemap"></param>
+/// <param name="powerup"></param>
+/// <param name="missile"></param>
 void Collisions::update(Player* player, TileMap* tilemap, PowerUp* powerup, Missile* missile)
 {
 	playerPowerUpCollision(player, powerup);
