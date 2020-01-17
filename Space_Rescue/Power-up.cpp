@@ -30,7 +30,9 @@ void PowerUp::initialise()
 	m_activeTime = 250;
 	m_animaTime = 0;
 	m_respawnTime = 0;
-	m_type = 1;
+	m_type = 2;
+	m_randX = 0;
+	m_randY = 0;
 	//
 	m_position = sf::Vector2f(400, 500);
 	//
@@ -59,16 +61,32 @@ void PowerUp::loadTexture()
 }
 
 //
-void PowerUp::spawnPowerUp()
+void PowerUp::spawnPowerUp(TileMap* tilemap)
 {
 	//
 	m_respawnTime++;
 	//
 	if (m_active == false && m_respawnTime > 500)
 	{
+		
+		m_randX = rand() % 28 - 1;
+		m_randY = rand() % 28 - 1;
+		
+		if (tilemap->getTiles(m_randX, m_randY)->getType() == 0)
+		{
+			m_position = tilemap->getTiles(m_randX, m_randY)->getPosition();
+			m_sprite.setPosition(m_position);
+		}
+
 		m_active = true;
 		m_respawnTime = 0;
 		m_activeTime = 250;
+		m_type += 1;
+
+		if (m_type > 2)
+		{
+			m_type = 1;
+		}
 	}
 }
 
@@ -117,7 +135,35 @@ void PowerUp::animatePowerUp()
 void PowerUp::update(sf::Time deltaTime)
 {
 	//
-	spawnPowerUp();
+	if (m_type == 1)
+	{
+		m_sprite.setTexture(m_textureOne);
+	}
+	else if (m_type == 2)
+	{
+		m_sprite.setTexture(m_textureTwo);
+	}
+	//
+	if (m_active == true)
+	{
+		powerUpLifeTime();
+	}
+}
+
+//
+void PowerUp::update(sf::Time deltaTime, TileMap* tilemap)
+{
+	//
+	spawnPowerUp(tilemap);
+	//
+	if (m_type == 1)
+	{
+		m_sprite.setTexture(m_textureOne);
+	}
+	else if (m_type == 2)
+	{
+		m_sprite.setTexture(m_textureTwo);
+	}
 	//
 	if (m_active == true)
 	{

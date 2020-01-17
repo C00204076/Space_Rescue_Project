@@ -26,6 +26,8 @@ public:
 
 	void setValues();
 
+	Tile* getTiles(int i, int j);
+
 private:
 	void initialise();
 

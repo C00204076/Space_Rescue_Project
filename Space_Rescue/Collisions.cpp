@@ -41,6 +41,7 @@ void Collisions::playerPowerUpCollision(Player* player, PowerUp* powerup)
 			player->setSpeed(true);
 		}
 
+		player->setPowerUpTime(0);
 		powerup->setActiveTime(0);
 		powerup->setActive(0);
 	}
@@ -49,7 +50,28 @@ void Collisions::playerPowerUpCollision(Player* player, PowerUp* powerup)
 //
 void Collisions::playerTileCollision(Player* player, TileMap* tilemap)
 {
-	player->setCollide(true);
+	/*sprite.getPosition().x < sprite2.getPosition().x + shape2.width &&
+	  sprite.getPosition().x + shape1.width > sprite2.getPosition().x &&
+	  sprite.getPosition().y < sprite2.getPosition().y + shape2.height &&
+	  shape1.height + sprite.getPosition().y > sprite2.getPosition().y*/
+	/*for (int i = 0; i < 30; i++)
+	{
+
+		for (int j = 0; j < 30; j++)
+		{
+			if (player->getPosition().x < tilemap->getTiles(1, 1)->getPosition().x + tilemap->getTiles(1, 1)->getRect().getSize().x &&
+				player->getPosition().x + 25 > tilemap->getTiles(1, 1)->getPosition().x&&
+				player->getPosition().y < tilemap->getTiles(1, 1)->getPosition().y + tilemap->getTiles(1, 1)->getRect().getSize().y &&
+				player->getPosition().y + 25 > tilemap->getTiles(1, 1)->getPosition().y)
+			{
+				if (tilemap->getTiles[i][j]->getType() == 9)
+				{
+					player->setCollide(true);
+				}
+
+			}
+		}
+	}*/
 }
 
 //

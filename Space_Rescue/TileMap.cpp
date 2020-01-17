@@ -76,3 +76,9 @@ void TileMap::render(sf::RenderWindow& window, sf::Vector2f scale)
 	}
 
 }
+
+//
+Tile* TileMap::getTiles(int i, int j)
+{
+	return m_tiles[i][j];
+}

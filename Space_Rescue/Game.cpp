@@ -181,14 +181,17 @@ void Game::update(sf::Time deltaTime)
 	m_tileMap->update(deltaTime, m_window);
 	//
 	m_player->update(deltaTime, m_playerView);
-
+	m_player->tileCollision(m_tileMap);
+	//
 	m_predator->update(deltaTime, m_player->getPosition(),m_player->getVelocity());
 	m_predator->detection(m_player->getPosition());
-
+	//
 	m_worker->update(deltaTime);
 	//
-	m_powerUp->update(deltaTime);
+	m_powerUp->update(deltaTime, m_tileMap);
 	m_miniPower->setPosition(m_powerUp->getPosition());
+	m_miniPower->setActive(m_powerUp->getActive());
+	m_miniPower->setType(m_powerUp->getType());
 	//
 	m_collision.update(m_player, m_tileMap, m_powerUp, m_player->getMissile());
 }
