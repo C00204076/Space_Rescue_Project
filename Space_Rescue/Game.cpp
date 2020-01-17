@@ -197,7 +197,7 @@ void Game::update(sf::Time deltaTime)
 	m_powerUp->update(deltaTime);
 	m_miniPower->setPosition(m_powerUp->getPosition());
 	//
-	m_collision.update(m_player, m_tileMap, m_powerUp, m_player->getMissile());
+	m_collision.update(m_player, m_predator,m_tileMap, m_powerUp, m_player->getMissile());
 }
 
 /// <summary>

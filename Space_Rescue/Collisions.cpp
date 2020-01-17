@@ -72,9 +72,15 @@ void Collisions::playerEnemyCollision(Player* player)
 }
 
 //
-void Collisions::enemyMissileCollision()
+void Collisions::enemyMissileCollision(Predator* predator, Missile* missile)
 {
-
+	if (missile->getIsPlayer() == true)
+	{
+		if (predator->m_body.getGlobalBounds().intersects(missile->getSprite().getGlobalBounds()))
+		{
+			predator->setHit(true);
+		}
+	}
 }
 
 //
@@ -102,13 +108,13 @@ void Collisions::workerTileCollision()
 }
 
 //
-void Collisions::update(Player* player, TileMap* tilemap, PowerUp* powerup, Missile* missile)
+void Collisions::update(Player* player, Predator* predator, TileMap* tilemap, PowerUp* powerup, Missile* missile)
 {
 	playerPowerUpCollision(player, powerup);
 	//playerTileCollision(player, tilemap);
 	//playerMissileCollision(player, missile);
 	//playerEnemyCollision(player);
-	//enemyMissileCollision();
+	enemyMissileCollision(predator,missile);
 	//enemyTileCollision();
 	//playerWorkerCollision(player);
 	//enemyWorkerCollision();

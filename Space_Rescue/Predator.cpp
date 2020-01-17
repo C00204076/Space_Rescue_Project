@@ -219,8 +219,19 @@ float Predator::angle(sf::Vector2f t_position, sf::Vector2f t_targetPosition)
 	return atan2(t_targetPosition.y - t_position.y, t_targetPosition.x - t_position.x);
 }
 
+void Predator::setHit(bool hit)
+{
+	if (hit == true)
+	{
+		alive = false;
+	}
+}
+
 void Predator::render(sf::RenderWindow& window)
 {
 	//window.draw(m_rect);
-	window.draw(m_body);
+	if (alive == true)
+	{
+		window.draw(m_body);
+	}
 }

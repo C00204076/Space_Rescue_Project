@@ -22,8 +22,12 @@ public:
 	float steer();
 	float distance();
 	float angle(sf::Vector2f t_position, sf::Vector2f t_targetPosition);
-private:
+
+	void setHit(bool hit);
+
 	sf::CircleShape m_body;
+private:
+	
 	sf::CircleShape m_coneOfVision;
 
 	float m_coneOfVisionLength;
@@ -36,6 +40,7 @@ private:
 
 	bool m_detect;
 	bool m_wandering = false;
+	bool alive = true;
 
 	sf::Vector2f m_detectionPoints[6];
 	sf::Vector2f m_position;

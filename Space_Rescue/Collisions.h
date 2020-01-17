@@ -19,7 +19,7 @@
 #include "Player.h"
 #include "Power-up.h"
 #include "Missile.h"
-
+#include "Predator.h"
 //
 class Collisions
 {
@@ -27,14 +27,14 @@ public:
 	Collisions();
 	~Collisions();
 
-	void update(Player* player, TileMap* tilemap, PowerUp* powerup, Missile* missile);
+	void update(Player* player, Predator* predator, TileMap* tilemap, PowerUp* powerup, Missile* missile);
 
 private:
 	void playerPowerUpCollision(Player* player, PowerUp* powerup);
 	void playerTileCollision(Player* player, TileMap* tilemap);
 	void playerMissileCollision(Player* player, Missile* missile);
 	void playerEnemyCollision(Player* player);
-	void enemyMissileCollision();
+	void enemyMissileCollision(Predator* predator, Missile* missile);
 	void enemyTileCollision();
 	void playerWorkerCollision(Player* player);
 	void enemyWorkerCollision();
